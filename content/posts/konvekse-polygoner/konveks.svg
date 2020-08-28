@@ -1,0 +1,26 @@
+<svg
+  version="1.1" baseProfile="full"
+  width="300" height="150"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 60 30"
+>
+  <rect width="60" height="30" fill="white" />
+  <path
+    stroke-width="0.4"
+    stroke="black"
+    fill="gray"
+    d="M 2 2 L 20 5 L 28 20 L 15 28 L 6 18 Z"
+  />
+  <path
+    stroke-width="0.4"
+    stroke="black"
+    fill="gray"
+    d="M 32 2 L 50 5 L 58 20 L 45 28 L 46 18 Z"
+  />
+
+  <line
+    x1="36" y1="4" x2="48" y2="24"
+    stroke-width="0.6"
+    stroke="red"
+  />
+</svg>

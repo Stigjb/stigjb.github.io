@@ -1,0 +1,5 @@
+baseURL = "https://stigjb.github.io"
+languageCode = "nb"
+defaultContentLanguage = "nb"
+title = "Stig Johan"
+theme = "ananke"
