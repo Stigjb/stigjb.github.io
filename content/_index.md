@@ -1,3 +1,0 @@
-# Stig
-
-En to tre.
