@@ -26,12 +26,7 @@ mangekanten, vil alle punktene på den rette linjen mellom punktene også være
 på innsiden av mangekanten. Figuren til høyre viser at dette ikke er tilfelle
 i en mangekant som ikke er konveks.
 
-◊figure[#:class "figure"]{
-  ◊img[#:class "figure-img img-fluid rounded" #:src "konveks.svg"]
-  ◊figcaption[#:class "figure-caption"]{
-    Konveks og ikke-konveks mangekant
-  }
-}
+◊figure["konveks.svg"]{Konveks og ikke-konveks mangekant}
 
 ◊h2{Typer}
 

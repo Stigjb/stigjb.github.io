@@ -7,20 +7,20 @@
   <rect width="60" height="30" fill="white" />
   <path
     stroke-width="0.4"
-    stroke="black"
-    fill="gray"
+    stroke="#000"
+    fill="#bbb"
     d="M 2 2 L 20 5 L 28 20 L 15 28 L 6 18 Z"
   />
   <path
     stroke-width="0.4"
-    stroke="black"
-    fill="gray"
+    stroke="#000"
+    fill="#bbb"
     d="M 32 2 L 50 5 L 58 20 L 45 28 L 46 18 Z"
   />
 
   <line
     x1="36" y1="4" x2="48" y2="24"
     stroke-width="0.6"
-    stroke="red"
+    stroke="blue"
   />
 </svg>
