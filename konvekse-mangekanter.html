@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <title>Konvekse mangekanter – Stig Berggren</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css">
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <main class="container">
+    <h1>Konvekse mangekanter</h1><div class="alert alert-warning">Siden er under skriving</div><h2>Hvem artikkelen er for</h2><p>Denne artikkelen er skrevet for deg som liker geometri og programmeringsspråket Rust.</p><h2>Hva er oppgaven vår</h2><p>Se for deg at du jobber i et selskap som leier ut elmopeder. Du vil ikke at kundene skal kjøre utenfor byen, så du har markert utleieområdet i et kart. Mopedene har GPS-mottaker, og du trenger å sjekke at posisjonen til hver moped er innenfor utleieområdet.</p><h2>Konvekse mangekanter</h2><p>Denne oppgaven blir lettere hvis vi begrenser oss til konvekse polygoner i første omgang. Alle mangekanter, konvekse eller ei, kan deles i flere mindre mangekanter som er konvekse.</p><p>Et polygon, eller en mangekant, har ingen hjørner som går innover. En mer formell definisjon er at hvis du velger to vikårlige punkter på innsiden av mangekanten, vil alle punktene på den rette linjen mellom punktene også være på innsiden av mangekanten. Figuren til høyre viser at dette ikke er tilfelle i en mangekant som ikke er konveks.</p><figure class="figure"><img src="konveks-og-ikke-konveks.svg" class="figure-img img-fluid"/><figcaption class="figure-caption">Konveks og ikke-konveks mangekant</figcaption></figure><h2>Typer</h2><p>La oss lage en type for todimensjonale punkter.</p><pre><code class="rust">pub struct Point(f64, f64);
+
+impl Point {
+  fn new(x: f64, y: f64) -&gt; Self {
+    Self(x, y)
+  }
+}</code></pre><p>For hver kant langs omkretsen av mangekanten kan vi tenke oss at vi strekker kanten ut i det uendelige i begge retninger, slik at hele planet deles i to. Vi ser da at hele mangekanten er på venstre siden av denne linjen. Dermed vet vi også at ethvert punkt på den høyre siden av linjen må være på utsiden av mangekanten.</p><figure class="figure"><img src="splitt-planet.svg" class="figure-img img-fluid"/><figcaption class="figure-caption">En linje gjennom en av mangekantens kanter deler
+planet i to</figcaption></figure><p>Gitt tre punkter A, B og C, hvordan kan vi sjekke om C er til høyre for linjen definert av AB? Vi kan begynne med å definere to vektorer <mathjax>\({\bf t} =
+B - A\)</mathjax> og <mathjax>\({\bf d} = C - A\)</mathjax>.</p><p>Så definerer vi en ny vektor som er lik <mathjax>\(\bf t\)</mathjax> rotert 90 grader mot klokka.</p><p><mathjax>\[\bf{t'} =
+\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix} \bf{t} =
+\begin{bmatrix} -{\bf t}_y \\ {\bf t}_x \end{bmatrix}\]</mathjax></p><p>Prikkproduktet <mathjax>\({\bf d}\cdot{\bf t'}\)</mathjax> vil være negativt hvis C er på høyre side av <mathjax>\(\bf t\)</mathjax>. Dette produktet kan vi regne ut som et uttrykk av d og t.</p><p><mathjax>\[{\bf d}\cdot{\bf t'} = {\bf d}_x{\bf t'}_x + {\bf d}_y{\bf t'}_y =
+-{\bf d}_x{\bf t}_y + {\bf d}_y{\bf t}_x\]</mathjax></p><p>En annen måte å forstå denne utregningen er å anta at T og D er tredimensjonale vektorer med z-komponent lik 0, regne ut kryssproduktet deres og sjekke fortegnet på den resulterende vektoren. <a href="https://math.stackexchange.com/q/1232773">Jamfør dette spørsmålet på Mathematics Stack Exchange (engelsk)</a></p><p><a href="point.rs">Her er filen</a></p>
+  </main>
+</body>
+</html>
