@@ -1,7 +1,7 @@
 #lang racket
 
 (require pollen/decode txexpr)
-(provide root figure)
+(provide (all-defined-out))
 
 (define (decode-linebreaks* elements)
   (decode-linebreaks elements " "))
@@ -10,9 +10,12 @@
   (decode-paragraphs elements #:linebreak-proc decode-linebreaks*))
 
 (define (root . elements)
-  (txexpr 'root empty (decode-elements elements
-    #:txexpr-elements-proc decode-paragraphs*
-    #:exclude-tags '(pre figure))))
+  (let* ([decode-linebreaks* (λ (elements) (decode-linebreaks elements " "))]
+         [decode-paragraphs* 
+           (λ (elements) (decode-paragraphs elements #:linebreak-proc decode-linebreaks*))])
+    (txexpr 'root empty (decode-elements elements
+      #:txexpr-elements-proc decode-paragraphs*
+      #:exclude-tags '(pre figure)))))
 
 (define (figure url . tx-elements)
   (let ([img-tx
@@ -20,3 +23,19 @@
 	[cap-tx
 	  (txexpr 'figcaption '((class "figure-caption")) tx-elements)])
    (txexpr 'figure '((class "figure")) (list img-tx cap-tx))))
+  
+(define (code-block lang . tx-elements)
+  (cons 'pre (list (txexpr 'code `((class ,lang)) tx-elements))))
+
+(define (link url . tx-elements)
+  (txexpr 'a `((href ,url)) tx-elements))
+
+(define ($ . xs)
+  `(mathjax ,(apply string-append `("\\(" ,@xs "\\)"))))
+
+(define ($$ . xs)
+  `(mathjax ,(apply string-append `("\\[" ,@xs "\\]"))))
+
+(define (alert [category "primary"] . tx-elements)
+  (let ([class (format "alert alert-~a" category)])
+    (txexpr 'div `((class ,class)) tx-elements)))

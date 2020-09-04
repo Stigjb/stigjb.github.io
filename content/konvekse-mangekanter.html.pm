@@ -2,6 +2,8 @@
 
 ◊h1{Konvekse mangekanter}
 
+◊alert["warning"]{Siden er under skriving}
+
 ◊h2{Hvem artikkelen er for}
 
 Denne artikkelen er skrevet for deg som liker geometri og
@@ -26,13 +28,13 @@ mangekanten, vil alle punktene på den rette linjen mellom punktene også være
 på innsiden av mangekanten. Figuren til høyre viser at dette ikke er tilfelle
 i en mangekant som ikke er konveks.
 
-◊figure["konveks.svg"]{Konveks og ikke-konveks mangekant}
+◊figure["konveks-og-ikke-konveks.svg"]{Konveks og ikke-konveks mangekant}
 
 ◊h2{Typer}
 
 La oss lage en type for todimensjonale punkter.
 
-◊pre{◊code[#:class "rust"]{
+◊code-block["rust"]{
   pub struct Point(f64, f64);
   
   impl Point {
@@ -40,36 +42,42 @@ La oss lage en type for todimensjonale punkter.
       Self(x, y)
     }
   }
-}}
-
-◊a[#:href "point.rs"]{Her er filen}
-
-◊table[#:class "table table-hover"]{
-  ◊thead{
-    ◊tr{
-      ◊th[#:scope "col"]{#}
-      ◊th[#:scope "col"]{First}
-      ◊th[#:scope "col"]{Last}
-      ◊th[#:scope "col"]{Handle}
-    }
-  }
-  ◊tbody{
-    ◊tr{
-      ◊th[#:scope "row"]{1}
-      ◊td{Mark}
-      ◊td{Otto}
-      ◊td{@mdo}
-    }
-    ◊tr{
-      ◊th[#:scope "row"]{2}
-      ◊td{Jacob}
-      ◊td{Thornton}
-      ◊td{@fat}
-    }
-    ◊tr{
-      ◊th[#:scope "row"]{3}
-      ◊td[#:colspan "2"]{Larry the Bird}
-      ◊td{@twitter}
-    }
-  }
 }
+
+For hver kant langs omkretsen av mangekanten kan vi tenke oss at vi strekker
+kanten ut i det uendelige i begge retninger, slik at hele planet deles i to.
+Vi ser da at hele mangekanten er på venstre siden av denne linjen. Dermed vet
+vi også at ethvert punkt på den høyre siden av linjen må være på utsiden av
+mangekanten.
+
+◊figure["splitt-planet.svg"]{En linje gjennom en av mangekantens kanter deler
+planet i to}
+
+Gitt tre punkter A, B og C, hvordan kan vi sjekke om C er til høyre for
+linjen definert av AB? Vi kan begynne med å definere to vektorer ◊${{\bf t} =
+B - A} og ◊${{\bf d} = C - A}.
+
+Så definerer vi en ny vektor som er lik ◊${\bf t} rotert 90 grader mot klokka.
+
+◊$${
+  \bf{t'} = 
+  \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \bf{t} =
+  \begin{bmatrix} -{\bf t}_y \\ {\bf t}_x \end{bmatrix}
+}
+
+Prikkproduktet ◊${{\bf d}\cdot{\bf t'}} vil være negativt hvis C er på høyre
+side av ◊${\bf t}. Dette produktet kan vi regne ut som et uttrykk av d og t.
+
+◊$${
+  {\bf d}\cdot{\bf t'} = {\bf d}_x{\bf t'}_x + {\bf d}_y{\bf t'}_y =
+  -{\bf d}_x{\bf t}_y + {\bf d}_y{\bf t}_x
+}
+
+En annen måte å forstå denne utregningen er å anta at T og D er
+tredimensjonale vektorer med z-komponent lik 0, regne ut kryssproduktet deres
+og sjekke fortegnet på den resulterende vektoren.
+◊link["https://math.stackexchange.com/q/1232773"]{Jamfør dette spørsmålet på
+Mathematics Stack Exchange (engelsk)}
+
+
+◊link["point.rs"]{Her er filen}
