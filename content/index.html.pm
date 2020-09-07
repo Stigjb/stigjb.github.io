@@ -1,11 +1,17 @@
 #lang pollen
 
-Denne siden er laget med [Pollen]()
+Denne nettsiden er laget med
+◊link["https://docs.racket-lang.org/pollen/"]{Pollen}.
 
-Lenker til ting
+◊h2{Lenker til ting}
 
-- Meg på github
+◊ul{
+  ◊li{◊link["https://github.com/stigjb"]{Min Github-profil}}
+  ◊li{◊link["https://twitter.com/stigjohan"]{Min Twitter-profil}}
+}
 
-Om mine prosjekter
+◊h2{Open source-prosjekter}
 
-- tonality
+◊ul{
+  ◊li{◊link["https://lib.rs/crate/tonality"]{Tonality}: Musikkteori i Rust}
+}
