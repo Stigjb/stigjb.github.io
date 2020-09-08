@@ -3,6 +3,12 @@
 Denne nettsiden er laget med
 ◊link["https://docs.racket-lang.org/pollen/"]{Pollen}.
 
+◊h2{Artikler}
+
+◊ul{
+  ◊li{◊link["konvekse-mangekanter.html"]{Konvekse mangekanter}}
+}
+
 ◊h2{Lenker til ting}
 
 ◊ul{
@@ -14,4 +20,5 @@ Denne nettsiden er laget med
 
 ◊ul{
   ◊li{◊link["https://lib.rs/crate/tonality"]{Tonality}: Musikkteori i Rust}
+  ◊li{◊link["/chord-quiz"]{Chord quiz}: Øv på å gjenkjenne akkorder i nettleseren}
 }
