@@ -1,0 +1,21 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+$font-family-serif: "Source Serif Pro", "Bitstream Charter", "Liberation Serif", serif;
+$font-family-monospace: "Fira Code", "Source Pro", "Liberation Mono", monospace;
+$font-family-sans-serif: "Fira Sans", "Liberation Sans", sans-serif;
+$font-family-base: $font-family-serif;
+
+// Required
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+// Optional
+@import "../bootstrap/scss/reboot";
+@import "../bootstrap/scss/type";
+@import "../bootstrap/scss/images";
+@import "../bootstrap/scss/code";
+@import "../bootstrap/scss/grid";
+@import "../bootstrap/scss/alert";
+
