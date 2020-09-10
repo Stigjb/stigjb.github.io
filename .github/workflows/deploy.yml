@@ -22,8 +22,8 @@ jobs:
       - name: Install and Build
         run: |
           raco pkg install --auto pollen
-          raco pollen render content
-          raco pollen publish content dist
+          raco pollen render
+          raco pollen publish . dist
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3

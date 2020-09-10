@@ -1,12 +1,15 @@
 #lang pollen
 
+◊(define blue "#0d6efd")
+◊(define yellow "#ffc107")
+
 html {
   font-size: 16px;
 }
 
 body {
-  background: #fafafa;
-  color: #202020;
+  background: #fff;
+  color: #212529;
   margin: 0;
 }
 
@@ -37,7 +40,7 @@ pre, code {
 }
 
 a {
-  color: blue;
+  color: ◊|blue|;
   text-decoration: none;
 }
 
@@ -53,14 +56,6 @@ a:hover {
   border-radius: .25rem;
 }
 
-◊(define blue "#0d6efd")
-◊(define yellow "#ffc107")
-
-◊(define (color-level color level)
-  (let ([color-base (if (> level 0) "black" "white")]
-        [level (abs level)])
-    (format "mix(~a, ~a, ~a)" color-base color (* level 0.08))))
-
 .alert-primary {
   color: ◊|blue|;
   border-color: ◊|blue|;
@@ -70,4 +65,23 @@ a:hover {
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
+}
+
+.figure {
+  display: inline-block;
+}
+
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.figure-caption {
+  font-size: 0.875rem;
+  color: #6c757e;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
