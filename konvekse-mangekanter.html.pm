@@ -130,4 +130,6 @@ impl Vector {
 }
 }
 
+Typene ◊code{Point} og ◊code{Vector} har samme struktur, men forskjellige metoder.
+
 ◊link["point.rs"]{Her er filen}
