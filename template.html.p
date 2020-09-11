@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+◊(define title (or (select-from-metas 'title here) (symbol->string here)))
 <html lang="nb">
 <head>
   <meta charset="UTF-8">
-  <title>◊select['h1 doc] – Stig Berggren</title>
+  <title>◊|title| – Stig Berggren</title>
+  <link rel="icon" href="/favicon.png">
   <link rel="stylesheet"
       href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css">
   <link rel="stylesheet" href="styles.css">
@@ -12,14 +14,19 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-  <div class="header">Stig Berggren</div>
-  <main>
+  <div class="header">
+    <h1>◊|title|</h1>
+    <p>Stig Berggren</p>
+  </div>
+  <article>
     ◊(->html doc #:splice? #t)
-  </main>
-  <div class="sidebar">
-    <a href="/">Hjem</a>
-    <a href="/wurtz.html">Bill</a>
-  </nav>
+  </article>
+  <div class="footer">
+    <ul>
+      <li><a href="/">Hjem</a></li>
+      <li><a href="https://github.com/stigjb">Github</a></li>
+      <li><a href="https://twitter.com/stigjohan">Twitter</a></li>
+    </ul>
   </div>
 </body>
 </html>

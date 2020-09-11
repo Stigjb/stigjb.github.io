@@ -8,7 +8,6 @@
 (define red "#dc3545")
 (define yellow "#ffc107")
 
-
 (define white "#fff")
 (define gray-400 "#ced4da")
 (define gray-600 "#6c757d")

@@ -6,6 +6,11 @@
 
 html {
   font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -15,11 +20,11 @@ body {
   font-family: "IBM Plex Serif", serif;
 }
 
-main {
-  max-width: 50rem;
+article {
+  max-width: 36rem;
   font-size: 1rem;
   line-height: 1.5;
-  margin: 0 1rem;
+  margin: 0 5rem;
 }
 
 p {
@@ -105,4 +110,18 @@ a:hover {
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+
+.header {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-bottom: solid 5px ◊|green|;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-top: solid 5px ◊|green|;
+  margin-top: 2rem;
 }

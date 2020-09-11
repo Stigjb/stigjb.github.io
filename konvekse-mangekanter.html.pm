@@ -1,6 +1,6 @@
 #lang pollen
 
-◊h1{Konvekse mangekanter}
+◊(define-meta title "Konvekse mangekanter")
 
 ◊alert["warning"]{Siden er under skriving}
 
@@ -31,6 +31,9 @@ Denne oppgaven blir lettere hvis vi begrenser oss til konvekse polygoner i
 første omgang. Alle mangekanter, konvekse eller ei, kan deles i flere mindre
 mangekanter som er konvekse.
 
+Vi går også ut fra at vi bare har _enkle_ mangekanter, hvor ingen kanter
+krysser hverandre.
+
 Et polygon, eller en mangekant, har ingen hjørner som går innover. En mer
 formell definisjon er at hvis du velger to vikårlige punkter på innsiden av
 mangekanten, vil alle punktene på den rette linjen mellom punktene også være på
@@ -49,8 +52,8 @@ hele mangekanten på venstre side av linjen. Da må også ethvert punkt på den
 høyre siden av linjen må være på utsiden av mangekanten.
 
 ◊figure["splitt-planet.svg"]{
-  En linje langs en av mangekantens kanter deler planet i to. Pilen viser
-  linjens retning.
+  En linje langs en av kantene deler planet i to. Pilen viser linjens
+  retning.
 }
 
 Gitt tre punkter ◊${A, B, C}, hvordan sjekker man om C er til høyre eller
@@ -77,7 +80,8 @@ vektor som er lik ◊${\mathbf{t}} rotert 90 grader mot klokka.
 Prikkproduktet ◊${\mathbf{d}\cdot\mathbf{t'}} vil være negativt hvis C er på
 høyre side av ◊${\mathbf{t}}. Prikkproduktet mellom to vektorer har samme
 fortegn som cosinus av vinkelen mellom dem, og det er akkurat det vi ønsker.
-Dette prikkproduktet kan vi regne ut som et uttrykk av d og t.
+Dette prikkproduktet kan vi regne ut som et uttrykk av komponentene av
+◊${\mathbf{d}} og ◊${\mathbf{t}}.
 
 ◊$${
   \mathbf{d}\cdot\mathbf{t'} =
