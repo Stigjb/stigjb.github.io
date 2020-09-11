@@ -33,26 +33,29 @@ mangekanter som er konvekse.
 
 Et polygon, eller en mangekant, har ingen hjørner som går innover. En mer
 formell definisjon er at hvis du velger to vikårlige punkter på innsiden av
-mangekanten, vil alle punktene på den rette linjen mellom punktene også være
-på innsiden av mangekanten. Figuren til høyre viser at dette ikke er tilfelle
-i en mangekant som ikke er konveks.
+mangekanten, vil alle punktene på den rette linjen mellom punktene også være på
+innsiden av mangekanten. Figuren under viser at dette ikke er tilfelle i en
+mangekant som ikke er konveks.
 
-◊figure["konveks-og-ikke-konveks.svg"]{Konveks og ikke-konveks mangekant}
-
-For hver kant langs omkretsen av mangekanten kan vi tenke oss at vi strekker
-kanten ut i det uendelige i begge retninger, slik at hele planet deles i to.
-Her er det nyttig å gi linjen en retning. Vi velger å gi kantene retning som
-svarer til å gå rundt omkretsen av mangekanten mot klokka. Vi ser da at
-hele mangekanten er på venstre siden av denne linjen. Dermed vet vi også at
-ethvert punkt på den høyre siden av linjen må være på utsiden av mangekanten.
-
-◊figure["splitt-planet.svg"]{
-  En linje gjennom en av mangekantens kanter deler planet i to
+◊figure["konveks-og-ikke-konveks.svg"]{
+  En konveks og en ikke-konveks mangekant.
 }
 
-Gitt tre punkter ◊${A, B, C}, hvordan kan vi sjekke om C er til høyre for
-linjen definert av AB? Vi kan forenkle bildet ved å fokusere på vektorene
-mellom punktene, og glemme hvor på planet de er.
+Hver kant langs omkretsen av mangekanten kan strekkes ut i det uendelige i
+begge retninger, slik at den blir en linje som deler planet i to. For å skille
+mellom sidene av linjen trenger den en definert retning. Vi velger å gi kantene
+retning som tilsvarer å gå rundt omkretsen av mangekanten mot klokka. Da er
+hele mangekanten på venstre side av linjen. Da må også ethvert punkt på den
+høyre siden av linjen må være på utsiden av mangekanten.
+
+◊figure["splitt-planet.svg"]{
+  En linje langs en av mangekantens kanter deler planet i to. Pilen viser
+  linjens retning.
+}
+
+Gitt tre punkter ◊${A, B, C}, hvordan sjekker man om C er til høyre eller
+venstre for linjen definert av AB? Vi kan forenkle bildet ved å fokusere på
+vektorene mellom punktene, og glemme hvor på planet de er.
 
 ◊${\mathbf{t} = B - A} og ◊${\mathbf{d} = C - A}.
 

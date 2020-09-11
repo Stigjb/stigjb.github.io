@@ -12,8 +12,14 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-  <main class="container">
+  <div class="header">Stig Berggren</div>
+  <main>
     ◊(->html doc #:splice? #t)
   </main>
+  <div class="sidebar">
+    <a href="/">Hjem</a>
+    <a href="/wurtz.html">Bill</a>
+  </nav>
+  </div>
 </body>
 </html>

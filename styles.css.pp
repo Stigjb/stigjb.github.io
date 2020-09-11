@@ -1,9 +1,7 @@
 #lang pollen
 
-◊(define blue "#0d6efd")
-◊(define yellow "#ffc107")
-◊(define gray-600 "#6c757d")
-◊(define gray-900 "#212529")
+◊(require "colors.rkt")
+
 ◊(define small-font-size ".875em")
 
 html {
@@ -41,6 +39,11 @@ h2 {
 pre, code {
   font-family: "Fira Mono", monospace;
   font-size: ◊|small-font-size|;
+}
+
+code {
+  color: ◊|pink|;
+  word-wrap: break-word;
 }
 
 pre {
