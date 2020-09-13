@@ -2,6 +2,9 @@
 
 ◊(define-meta title "Konvekse mangekanter")
 
+◊(define (vec letter)
+  ($ (format "\\mathbf{~a}" letter)))
+
 ◊alert["warning"]{Siden er under skriving}
 
 ◊alert["primary"]{
@@ -44,12 +47,12 @@ mangekant som ikke er konveks.
   En konveks og en ikke-konveks mangekant.
 }
 
-Hver kant langs omkretsen av mangekanten kan strekkes ut i det uendelige i
-begge retninger, slik at den blir en linje som deler planet i to. For å skille
-mellom sidene av linjen trenger den en definert retning. Vi velger å gi kantene
-retning som tilsvarer å gå rundt omkretsen av mangekanten mot klokka. Da er
-hele mangekanten på venstre side av linjen. Da må også ethvert punkt på den
-høyre siden av linjen må være på utsiden av mangekanten.
+Hver kant langs omkretsen av mangekanten kan strekkes ut i det uendelige i begge
+retninger, slik at den blir en linje som deler planet i to. For å skille mellom
+sidene av linjen trenger den en definert retning. Vi velger å gi kantene retning
+som tilsvarer å gå rundt omkretsen av mangekanten mot klokka. Da er hele
+mangekanten på venstre side av linjen. Da må også ethvert punkt på den høyre
+siden av linjen må være på utsiden av mangekanten.
 
 ◊figure["splitt-planet.svg"]{
   En linje langs en av kantene deler planet i to. Pilen viser linjens
@@ -62,14 +65,28 @@ vektorene mellom punktene, og glemme hvor på planet de er.
 
 ◊${\mathbf{t} = B - A} og ◊${\mathbf{d} = C - A}.
 
-At vektor ◊${\mathbf{d}} er til høyre for ◊${\mathbf{t}} er det samme som
-at vinkelen ◊${\theta_{\mathbf{dt}}} er mellom 180 og 360 grader.
+◊figure["punkter-og-vektorer.svg"]{
+  Vektorene ◊vec{t} og ◊vec{d} er definert ut fra punktene A, B og C.
+}
+
+At vektor ◊vec{d} er til høyre for ◊vec{t} er det samme som at vinkelen
+◊${\theta_{\mathbf{dt}}} er mellom 180 og 360 grader.
 
 Hva slags operasjoner kan vi gjøre med to vektorer? Vi kan ta prikkproduktet
-deres, men det gir oss ikke helt det vi trenger. En av faktorene i
+deres, og men det gir oss ikke helt det vi trenger. En av faktorene i
 prikkproduktet er cosinus av vinkelen mellom vektorene, men cosinus ser
 forskjell på foran og bak, ikke høyre og venstre. Vi definerer derfor en ny
-vektor som er lik ◊${\mathbf{t}} rotert 90 grader mot klokka.
+vektor som er lik ◊vec{t} rotert 90 grader mot klokka.
+
+På grunn av den trigonometriske identiteten under, ser vi at dette produktet
+hjelper oss å finne vinkelen mellom vektoren og en hypotetisk vektor som er
+90° rotert i forhold til den.
+
+◊$${
+  \sin{\theta_{\mathbf{dt}}}
+= \cos{\theta_{\mathbf{dt'}}}
+= \cos{(\theta_{\mathbf{dt}} + 90°)}
+} 
 
 ◊$${
   \bf{t'} = 
@@ -77,11 +94,15 @@ vektor som er lik ◊${\mathbf{t}} rotert 90 grader mot klokka.
   \begin{bmatrix} -\mathbf{t}_2 \\ \mathbf{t}_1 \end{bmatrix}
 }
 
+◊figure["t-og-t-prime.svg"]{
+  Vektor ◊vec{t'} og dens relasjon til ◊vec{t} og ◊vec{d}.
+}
+
 Prikkproduktet ◊${\mathbf{d}\cdot\mathbf{t'}} vil være negativt hvis C er på
-høyre side av ◊${\mathbf{t}}. Prikkproduktet mellom to vektorer har samme
-fortegn som cosinus av vinkelen mellom dem, og det er akkurat det vi ønsker.
-Dette prikkproduktet kan vi regne ut som et uttrykk av komponentene av
-◊${\mathbf{d}} og ◊${\mathbf{t}}.
+høyre side av ◊vec{t}. Prikkproduktet mellom to vektorer har samme fortegn som
+cosinus av vinkelen mellom dem, og det er akkurat det vi ønsker. Dette
+prikkproduktet kan vi regne ut som et uttrykk av komponentene av ◊vec{d} og
+◊vec{t}.
 
 ◊$${
   \mathbf{d}\cdot\mathbf{t'} =

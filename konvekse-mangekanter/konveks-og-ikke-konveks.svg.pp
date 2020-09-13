@@ -1,6 +1,6 @@
 #lang pollen
 
-◊(require "colors.rkt")
+◊(require "../colors.rkt")
 
 <svg
   version="1.1" baseProfile="full"
