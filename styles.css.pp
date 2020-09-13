@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: ◊|white|;
   color: ◊|gray-900|;
   margin: 0;
   font-family: "IBM Plex Serif", serif;
@@ -32,13 +32,28 @@ p {
 }
 
 h1 {
-  font-family: Verdana;
-  font-weight: lighter;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 3rem;
 }
 
 h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
   font-size: 1.1rem;
-  padding-top: 2rem;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: ◊|gray-600|;
+  font-size: 1rem;
 }
 
 pre, code {

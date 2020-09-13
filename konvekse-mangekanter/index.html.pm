@@ -5,6 +5,9 @@
 ◊(define (vec letter)
   ($ (format "\\mathbf{~a}" letter)))
 
+◊(define (norm vec)
+  (format "\\left\\Vert ~a\\right\\Vert" vec))
+
 ◊alert["warning"]{Siden er under skriving}
 
 ◊alert["primary"]{
@@ -59,24 +62,52 @@ siden av linjen må være på utsiden av mangekanten.
   retning.
 }
 
-Gitt tre punkter ◊${A, B, C}, hvordan sjekker man om C er til høyre eller
-venstre for linjen definert av AB? Vi kan forenkle bildet ved å fokusere på
-vektorene mellom punktene, og glemme hvor på planet de er.
+◊h3{Trigonometri}
 
-◊${\mathbf{t} = B - A} og ◊${\mathbf{d} = C - A}.
+Gitt tre punkter ◊${A, B, C}, hvordan sjekker man om C er til høyre eller
+venstre for linjen definert av AB? Det er det samme som at vinkelen ◊${\angle
+{CAB}} er mellom 180 og 360 grader. Fordi vi kun er interessert i vinkelen
+mellom dem, er det ikke relevant hvor på planet punktene befinner seg. Vi
+definerer vektorene ◊vec{d} og ◊vec{t} slik at vinkelen ◊${\theta_{\mathbf{dt}}}
+er lik ◊${\angle{CAB}}.
 
 ◊figure["punkter-og-vektorer.svg"]{
-  Vektorene ◊vec{t} og ◊vec{d} er definert ut fra punktene A, B og C.
+  Vektorene ◊vec{t} og ◊vec{d} er definert ut fra punktene A, B og C slik at
+  ◊${\mathbf{t} = B - A} og ◊${\mathbf{d} = C - A}.
 }
 
-At vektor ◊vec{d} er til høyre for ◊vec{t} er det samme som at vinkelen
-◊${\theta_{\mathbf{dt}}} er mellom 180 og 360 grader.
+Vektoren ◊vec{d} er til venstre for ◊vec{t} hvis vinkelen mellom dem er i
+intervallet (0°, 180°), og til høyre for den hvis vinkelen er i intervallet
+(180°, 360°). Dette er også intervallene hvor sinus av en vinkel er henholds
+positiv og negativ. Spørsmålet om ◊vec{d} er til høyre for ◊vec{t} er derfor det
+samme som at ◊${\sin{\theta_{\mathbf{dt}}} < 0}.
+
+◊h3{Prikkprodukt}
+
+Definisjonen av prikkproduktet gir oss en måte å relatere koordinatene til
+vektorer med deres størrelse og retning.
+
+◊$${
+  \mathbf{u}\cdot\mathbf{v}
+= ◊norm{u} ◊norm{v} \cos{\theta_{\mathbf{uv}}}
+= \mathbf{u}_1\mathbf{v}_1 + \mathbf{u}_2\mathbf{v}_2
+}
+
+Det ene uttrykket involverer cosinus, men vi har mer bruk for sinus. En
+trigonometrisk identitet viser at sinus og kosinus er den samme funksjonen med
+en faseforskyvning på 90°:
+
+◊$${\sin{\theta} = \cos{(\theta - 90°)}}
+
+Den eksakte verdien av sinus er ikke viktig, kun fortegnet — om verdien er
+større enn eller mindre enn null. Derfor er lengden på vektorene irrelevant,
+siden de kun påvirker absoluttverdien til prikkproduktet.
 
 Hva slags operasjoner kan vi gjøre med to vektorer? Vi kan ta prikkproduktet
 deres, og men det gir oss ikke helt det vi trenger. En av faktorene i
 prikkproduktet er cosinus av vinkelen mellom vektorene, men cosinus ser
 forskjell på foran og bak, ikke høyre og venstre. Vi definerer derfor en ny
-vektor som er lik ◊vec{t} rotert 90 grader mot klokka.
+vektor som er lik ◊vec{t} rotert 90 grader med klokka.
 
 På grunn av den trigonometriske identiteten under, ser vi at dette produktet
 hjelper oss å finne vinkelen mellom vektoren og en hypotetisk vektor som er
@@ -85,30 +116,30 @@ hjelper oss å finne vinkelen mellom vektoren og en hypotetisk vektor som er
 ◊$${
   \sin{\theta_{\mathbf{dt}}}
 = \cos{\theta_{\mathbf{dt'}}}
-= \cos{(\theta_{\mathbf{dt}} + 90°)}
+= \cos{(\theta_{\mathbf{dt}} - 90°)}
 } 
 
 ◊$${
   \bf{t'} = 
-  \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \bf{t} =
-  \begin{bmatrix} -\mathbf{t}_2 \\ \mathbf{t}_1 \end{bmatrix}
+  \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \bf{t} =
+  \begin{bmatrix} \mathbf{t}_2 \\ -\mathbf{t}_1 \end{bmatrix}
 }
 
 ◊figure["t-og-t-prime.svg"]{
   Vektor ◊vec{t'} og dens relasjon til ◊vec{t} og ◊vec{d}.
 }
 
-Prikkproduktet ◊${\mathbf{d}\cdot\mathbf{t'}} vil være negativt hvis C er på
-høyre side av ◊vec{t}. Prikkproduktet mellom to vektorer har samme fortegn som
-cosinus av vinkelen mellom dem, og det er akkurat det vi ønsker. Dette
-prikkproduktet kan vi regne ut som et uttrykk av komponentene av ◊vec{d} og
-◊vec{t}.
+Prikkproduktet ◊${\mathbf{d}\cdot\mathbf{t'}} vil være positivt hvis og bare
+hvis C er på høyre side av ◊vec{t}. Prikkproduktet mellom to vektorer har samme
+fortegn som cosinus av vinkelen mellom dem, og det er akkurat det vi ønsker.
+Dette prikkproduktet kan vi regne ut som et uttrykk av komponentene av ◊vec{d}
+og ◊vec{t}.
 
 ◊$${
   \mathbf{d}\cdot\mathbf{t'} =
-  \left\Vert\mathbf{d}\right\Vert \left\Vert\mathbf{t'}\right\Vert \cos{\theta_{\mathbf{dt'}}} =
+  ◊norm{\mathbf{d}} ◊norm{\mathbf{t'}} \cos{\theta_{\mathbf{dt'}}} =
   \mathbf{d}_1\mathbf{t'}_1 + \mathbf{d}_2\mathbf{t'}_2 =
-  -\mathbf{d}_1\mathbf{t}_2 + \mathbf{d}_2\mathbf{t}_1
+  \mathbf{d}_1\mathbf{t}_2 - \mathbf{d}_2\mathbf{t}_1
 }
 
 En annen måte å forstå denne utregningen er å anta at T og D er
