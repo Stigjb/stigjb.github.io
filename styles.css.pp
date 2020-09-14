@@ -42,6 +42,7 @@ h1 {
 h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  padding-top: 0.8rem;
   font-weight: 700;
   line-height: 1.2;
   font-size: 1.1rem;
@@ -50,6 +51,7 @@ h2 {
 h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
   font-weight: 700;
   line-height: 1.2;
   color: ◊|gray-600|;

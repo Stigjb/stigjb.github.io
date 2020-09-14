@@ -31,6 +31,11 @@ Det er viktig at programmet kjører lynraskt, men du kvier deg for å skrive
 C eller C++ fordi du er lei av å få segmenteringsfeil eller minnelekkasjer.
 Du har derfor valgt å skrive koden i ◊link["https://rust-lang.org"]{Rust}.
 
+Du er heller ikke klar over at det finnes biblioteker du kan bruke som løser
+oppgaven. For eksempel
+◊link["https://shapely.readthedocs.io/en/stable/manual.html"]{Shapely} for
+Python.
+
 ◊h2{Konvekse mangekanter}
 
 Denne oppgaven blir lettere hvis vi begrenser oss til konvekse polygoner i
@@ -89,7 +94,7 @@ vektorer med deres størrelse og retning.
 
 ◊$${
   \mathbf{u}\cdot\mathbf{v}
-= ◊norm{u} ◊norm{v} \cos{\theta_{\mathbf{uv}}}
+= ◊norm{\mathbf{u}} ◊norm{\mathbf{v}} \cos{\theta_{\mathbf{uv}}}
 = \mathbf{u}_1\mathbf{v}_1 + \mathbf{u}_2\mathbf{v}_2
 }
 
