@@ -132,8 +132,15 @@ a:hover {
 .header {
   width: 100%;
   padding: 1rem 2rem;
-  border-bottom: solid 5px ◊|green|;
+  border-bottom: solid 5px #198754;
   margin-bottom: 2rem;
+  background-image: linear-gradient(to right, ◊|green|, ◊|white| 80%);
+}
+
+.header-inner {
+  background: ◊|white|;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
 }
 
 .footer {

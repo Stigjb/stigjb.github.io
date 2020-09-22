@@ -15,8 +15,10 @@
 </head>
 <body>
   <div class="header">
-    <h1>◊|title|</h1>
-    <p>Stig Berggren</p>
+    <div class="header-inner">
+      <h1>◊|title|</h1>
+      <p>Stig Berggren</p>
+    </div>
   </div>
   <article>
     ◊(->html doc #:splice? #t)

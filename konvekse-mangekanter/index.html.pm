@@ -20,6 +20,10 @@
 Denne artikkelen er skrevet for deg som liker geometri og
 programmeringsspråket Rust.
 
+Vi vil først se på geometrien som ligger bak problemet. Så vil vi implementere
+algoritmen fra bunnen av. Så vil vi overføre programmet til å bruke et ferdig
+geometribibliotek som er publisert på crates.io.
+
 ◊h2{Hva er oppgaven vår}
 
 Se for deg at du jobber i et selskap som leier ut elmopeder. Du vil ikke at
