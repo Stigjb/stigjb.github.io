@@ -1,5 +1,6 @@
 /public/
 compiled/
+/dist/
 *.html
 *.svg
 *.css
