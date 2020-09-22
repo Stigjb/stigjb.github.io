@@ -28,6 +28,7 @@
       <li><a href="/">Hjem</a></li>
       <li><a href="https://github.com/stigjb">Github</a></li>
       <li><a href="https://twitter.com/stigjohan">Twitter</a></li>
+      <li><a href="/kolofon.html">Kolofon</a></li>
     </ul>
   </div>
 </body>

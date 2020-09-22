@@ -1,16 +1,15 @@
 #lang pollen
 
-Denne nettsiden er laget med
-◊link["https://docs.racket-lang.org/pollen/"]{Pollen}.
+◊define-meta[title]{stigjohan.no}
 
-◊h2{Lenker til ting}
+◊h2{Min bakgrunn}
 
-◊ul{
-  ◊li{◊link["https://github.com/stigjb"]{Min Github-profil}}
-  ◊li{◊link["https://twitter.com/stigjohan"]{Min Twitter-profil}}
-}
+Jeg har en bachelorgrad i musikkvitenskap fra Universitetet i Oslo og en
+mastergrad i informatikk. Mitt spesialfelt er datalingvistikk, som også er kjent
+som språkteknologi, ◊em{computational linguistics} eller ◊em{Natural Language
+Processing} (NLP).
 
-◊h2{Open source-prosjekter}
+◊h2{Prosjekter med åpen kildekode}
 
 ◊ul{
   ◊li{◊link["https://lib.rs/crate/tonality"]{Tonality}: Musikkteori i Rust}
