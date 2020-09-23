@@ -163,3 +163,9 @@ blockquote > footer {
 blockquote > footer::before {
   content: "\2014\00A0";
 }
+
+@media all and (max-width: 800px) {
+  article {
+    margin: 0 5%;
+  }
+}
