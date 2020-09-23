@@ -149,3 +149,17 @@ a:hover {
   border-top: solid 5px ◊|green|;
   margin-top: 2rem;
 }
+
+blockquote {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+blockquote > footer {
+  font-size: 0.85em;
+  color: ◊|gray-600|;
+}
+
+blockquote > footer::before {
+  content: "\2014\00A0";
+}
