@@ -4,4 +4,6 @@ index.html
 anbefalinger.html
 kolofon.html
 404.html
-konvekse-mangekanter
+◊konvekse-mangekanter/index.html{
+    konvekse-mangekanter/demo.html
+}
