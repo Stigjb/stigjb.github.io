@@ -4,3 +4,4 @@ compiled/
 *.html
 *.svg
 *.css
+node_modules

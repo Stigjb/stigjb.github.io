@@ -149,3 +149,9 @@ a:hover {
   border-top: solid 5px ◊|green|;
   margin-top: 2rem;
 }
+
+.canvas-wrapper {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: ◊|gray-400|;
+}
