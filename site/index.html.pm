@@ -1,6 +1,9 @@
 #lang pollen
 
-◊define-meta[title]{stigjohan.no}
+◊define-meta[title]{Stig Johan}
+
+Denne hjemmesiden vil gradvis finne sin form. Her vil jeg skrive om prosjekter
+jeg holder på med og tekniske temaer som opptar meg.
 
 ◊h2{Min bakgrunn}
 
@@ -13,4 +16,8 @@ Processing} (NLP).
 
 ◊ul{
   ◊li{◊link["https://lib.rs/crate/tonality"]{Tonality}: Musikkteori i Rust}
+  ◊li{
+    ◊link["https://stigjohan.no/chord-quiz"]{Chord quiz}: Test dine
+    akkordkunnskaper i nettleseren.
+  }
 }

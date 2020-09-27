@@ -36,7 +36,7 @@ h1 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h2 {
@@ -143,6 +143,8 @@ a:hover {
   border-radius: 0.25rem;
 }
 
+.header-inner p:last-child { margin-bottom: 0; }
+
 .footer {
   width: 100%;
   padding: 1rem 2rem;
@@ -153,6 +155,10 @@ a:hover {
 blockquote {
   font-size: 0.85rem;
   line-height: 1.3;
+  padding-left: 1rem;
+  border-left: solid 3px ◊|yellow|;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 blockquote > footer {

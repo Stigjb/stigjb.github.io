@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>◊|title| – Stig Berggren</title>
+  <title>◊|title| | Stig Johan</title>
 
   <link rel="icon" href="/favicon.png">
   <link
@@ -27,7 +27,7 @@
   <div class="header">
     <div class="header-inner">
       <h1>◊|title|</h1>
-      <p>Stig Berggren</p>
+      <p>Stig Johan Berggren</p>
     </div>
   </div>
   <article>
