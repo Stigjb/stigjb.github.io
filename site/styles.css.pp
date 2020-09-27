@@ -155,3 +155,38 @@ a:hover {
   border-radius: 0.5rem;
   background: ◊|gray-400|;
 }
+
+button {
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  background: ◊|blue|;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+}
+
+button:hover,
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+button:disabled {
+  background: ◊|gray-400|;
+  color: ◊|gray-600|;
+}
