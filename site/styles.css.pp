@@ -180,6 +180,11 @@ blockquote > footer::before {
   padding: 1rem;
   border-radius: 0.5rem;
   background: ◊|gray-400|;
+  max-width: 400px;
+}
+
+canvas {
+  width: 100%;
 }
 
 button {
