@@ -8,14 +8,12 @@ const ANIMATE = 1;
 const FINISHED = 2;
 
 const state = {
-  bounds: { l: 0, r: 400, t: 0, b: 300 },
+  bounds: { l: 0, r: canvas.width, t: 0, b: canvas.height },
   points: [],
   newEdges: [],
   edges: [],
   state: ADD_POINTS,
 };
-
-reset();
 
 canvas.onclick = (event) => {
   if (state.state !== ADD_POINTS) {
@@ -26,8 +24,10 @@ canvas.onclick = (event) => {
 };
 
 function reset() {
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
   ctx.setTransform(1, 0, 0, 1, 0, 0);
-  state.bounds = { l: 0, r: 400, t: 0, b: 300 };
+  state.bounds = { l: 0, r: canvas.width, t: 0, b: canvas.height };
   state.points = [];
   state.newEdges = [];
   state.edges = [];
@@ -37,6 +37,8 @@ function reset() {
 }
 
 resetButton.onclick = reset;
+window.onresize = reset;
+reset();
 
 goButton.onclick = () => {
   if (state.points.length < 3) {
@@ -154,10 +156,17 @@ function animateToTarget() {
   const duration = 2000;
 
   const { newEdges, bounds } = state;
+  bounds.w = bounds.r - bounds.l;
+  bounds.h = bounds.b - bounds.t;
   const scale = Math.min(
-    canvas.clientWidth / (bounds.r - bounds.l),
-    canvas.clientHeight / (bounds.b - bounds.t),
+    canvas.width / bounds.w,
+    canvas.height / bounds.h,
   );
+
+  const targetPos = {
+    l: -bounds.l + ((canvas.width / scale - bounds.w) / 2 * 1),
+    t: -bounds.t + ((canvas.height / scale - bounds.h) / 2 * 1),
+  };
 
   ctx.fillStyle = "white";
   ctx.strokeStyle = "black";
@@ -169,18 +178,16 @@ function animateToTarget() {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     const ratio = Math.min(1, (t - t0) / duration);
     const tf = -(Math.cos(Math.PI * ratio) - 1) / 2;
-    ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.scale(
       lerp(1, scale, tf),
       lerp(1, scale, tf),
     );
     ctx.translate(
-      lerp(0, -bounds.l, tf),
-      lerp(0, -bounds.t, tf),
+      lerp(0, targetPos.l, tf),
+      lerp(0, targetPos.t, tf),
     );
-
-    // ctx.strokeRect(bounds.l, bounds.t, bounds.r - bounds.l, bounds.b - bounds.t);
 
     newEdges.forEach(e => {
       const x = lerp(e.oldX, e.newX, tf);
@@ -194,7 +201,10 @@ function animateToTarget() {
     if (ratio < 1) {
       window.requestAnimationFrame(step);
     } else {
-      ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.restore();
       drawPoly(newEdges.map(e => { return { x: e.newX, y: e.newY }; }));
       state.state = FINISHED;
       resetButton.disabled = false;
