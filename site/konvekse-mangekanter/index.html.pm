@@ -1,6 +1,8 @@
 #lang pollen
 
 ◊(define-meta title "Konvekse mangekanter")
+◊(define-meta mathjax #t)
+◊(define-meta hljs #t)
 
 ◊(define (vec letter)
   ($ (format "\\mathbf{~a}" letter)))
