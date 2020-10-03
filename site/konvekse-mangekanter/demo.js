@@ -9,8 +9,6 @@ const FINISHED = 2;
 
 const state = {
   bounds: { l: 0, r: canvas.width, t: 0, b: canvas.height },
-  points: [],
-  newEdges: [],
   edges: [],
   state: ADD_POINTS,
 };
@@ -27,9 +25,9 @@ function reset() {
   canvas.width = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
   ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.fillStyle = "white";
+  ctx.strokeStyle = "black";
   state.bounds = { l: 0, r: canvas.width, t: 0, b: canvas.height };
-  state.points = [];
-  state.newEdges = [];
   state.edges = [];
   state.state = ADD_POINTS;
   goButton.disabled = true;
@@ -41,7 +39,7 @@ window.onresize = reset;
 reset();
 
 goButton.onclick = () => {
-  if (state.points.length < 3) {
+  if (state.edges.length < 3) {
     return;
   }
   state.state = ANIMATE;
@@ -52,94 +50,79 @@ goButton.onclick = () => {
 };
 
 function addPoint(event) {
-  const { points, edges } = state;
+  const { edges } = state;
   const rect = canvas.getBoundingClientRect();
   const x = Math.floor(event.x - rect.x);
   const y = Math.floor(event.y - rect.y);
-  const p2 = { x, y };
+  const e = { x, y, dX: null, dY: null, x1: null, x2: null };
 
-  if (points.length === 1) {
-    const p1 = points[0];
-    edges.push({ x: p2.x - p1.x, y: p2.y - p1.y });
-    edges.push({ x: p1.x - p2.x, y: p1.y - p2.y });
-  } else if (points.length > 1) {
+  if (edges.length === 0) {
+    edges.push(e);
+  } else if (edges.length === 1) {
+    const e0 = edges.pop();
+    Object.assign(e0, { dX: e.x - e0.x, dY: e.y - e0.y });
+    edges.push(e0, e);
+  } else if (edges.length > 1) {
     goButton.disabled = false;
-    const p0 = points[0];
-    const p1 = points[points.length - 1];
-    const edge1 = { x: p2.x - p1.x, y: p2.y - p1.y };
-    const edge2 = { x: p0.x - p2.x, y: p0.y - p2.y };
-    edges[edges.length - 1] = edge1;
-    edges.push(edge2);
+    const e0 = edges[0];
+    const e1 = edges.pop();
+    Object.assign(e1, { dX: e.x - e1.x, dY: e.y - e1.y });
+    Object.assign(e, { dX: e0.x - e.x, dY: e0.y - e.y });
+    edges.push(e1, e);
   }
-  points.push(p2);
 }
 
 function draw() {
-  const { points } = state;
+  const { edges } = state;
 
-  ctx.fillStyle = "white";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  if (points.length < 3) {
+  if (edges.length < 3) {
     drawSeparate();
   } else {
-    drawPoly(points);
+    drawPoly(edges);
   }
 }
 
 function drawSeparate() {
-  ctx.fillStyle = "black";
-  state.points.forEach(p => {
+  state.edges.forEach(p => {
     ctx.beginPath();
     ctx.ellipse(p.x, p.y, 2, 2, 0, 0, 2 * Math.PI);
-    ctx.fill();
+    ctx.stroke();
   });
 }
 
-function drawPoly(points) {
-  const p0 = points[0];
+function drawPoly(edges) {
+  const p0 = edges[0];
 
-  ctx.strokeStyle = "black";
   ctx.beginPath();
   ctx.moveTo(p0.x, p0.y);
-  points.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+  edges.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
   ctx.closePath();
   ctx.stroke();
 }
 
-function ang(vec) {
-  let res = Math.atan2(vec.y, vec.x);
-
-  if (res < 0) {
-    res += 2 * Math.PI;
-  }
-  return res;
-}
-
-function argsort(a) {
-  const indices = Array.from(a.keys());
-
-  return indices.sort((i, j) => a[i] - a[j]);
-}
+const ang = edge => Math.atan2(edge.dY, edge.dX);
 
 function calculateTarget() {
-  const { points, edges, newEdges, bounds } = state;
-  const order = argsort(edges.map(e => ang(e)));
-  let point = Object.assign({}, points[0]);
+  const { edges, bounds } = state;
+  edges.sort((e1, e2) => ang(e2) - ang(e1));
 
-  newEdges.length = 0;
-  Object.assign(bounds, { l: point.x, r: point.x, t: point.y, b: point.y });
-  order.forEach(i => {
-    let edge = edges[i];
-    const x = point.x - edge.x;
-    const y = point.y - edge.y;
+  let point = null;
+  edges.forEach(edge => {
+    if (point === null) {
+      point = { x: edge.x, y: edge.y };
+      Object.assign(bounds, { l: edge.x, r: edge.x, t: edge.y, b: edge.y });
+    }
+    edge.x1 = point.x;
+    edge.y1 = point.y;
 
-    point = { x, y };
-    edge = { oldX: points[i].x, oldY: points[i].y, newX: x, newY: y, x: edge.x, y: edge.y };
-    newEdges.push(edge);
-    bounds.l = Math.min(bounds.l, x);
-    bounds.r = Math.max(bounds.r, x);
-    bounds.t = Math.min(bounds.t, y);
-    bounds.b = Math.max(bounds.t, y);
+    point.x = point.x + edge.dX;
+    point.y = point.y + edge.dY;
+
+    bounds.l = Math.min(bounds.l, point.x);
+    bounds.r = Math.max(bounds.r, point.x);
+    bounds.t = Math.min(bounds.t, point.y);
+    bounds.b = Math.max(bounds.b, point.y);
   });
   bounds.l = bounds.l - 0.05 * (bounds.r - bounds.l);
   bounds.r = bounds.r + 0.05 * (bounds.r - bounds.l);
@@ -155,7 +138,7 @@ function animateToTarget() {
   let t0 = null;
   const duration = 2000;
 
-  const { newEdges, bounds } = state;
+  const { edges, bounds } = state;
   bounds.w = bounds.r - bounds.l;
   bounds.h = bounds.b - bounds.t;
   const scale = Math.min(
@@ -167,9 +150,6 @@ function animateToTarget() {
     l: -bounds.l + ((canvas.width / scale - bounds.w) / 2 * 1),
     t: -bounds.t + ((canvas.height / scale - bounds.h) / 2 * 1),
   };
-
-  ctx.fillStyle = "white";
-  ctx.strokeStyle = "black";
 
   function step(t) {
     if (t0 === null) {
@@ -189,12 +169,12 @@ function animateToTarget() {
       lerp(0, targetPos.t, tf),
     );
 
-    newEdges.forEach(e => {
-      const x = lerp(e.oldX, e.newX, tf);
-      const y = lerp(e.oldY, e.newY, tf);
+    edges.forEach(e => {
+      const x = lerp(e.x, e.x1, tf);
+      const y = lerp(e.y, e.y1, tf);
       ctx.beginPath();
       ctx.moveTo(x, y);
-      ctx.lineTo(x + e.x, y + e.y);
+      ctx.lineTo(x + e.dX, y + e.dY);
       ctx.closePath();
       ctx.stroke();
     });
@@ -205,7 +185,7 @@ function animateToTarget() {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.restore();
-      drawPoly(newEdges.map(e => { return { x: e.newX, y: e.newY }; }));
+      drawPoly(edges.map(e => { return { x: e.x1, y: e.y1 }; }));
       state.state = FINISHED;
       resetButton.disabled = false;
     }
