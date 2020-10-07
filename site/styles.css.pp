@@ -165,6 +165,15 @@ a:hover {
   padding: 1rem 2rem;
   border-top: solid 5px var(--green);
   margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-nav, .footer-some {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 blockquote {

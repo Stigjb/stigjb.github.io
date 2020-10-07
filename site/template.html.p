@@ -38,12 +38,15 @@ EOF
     ◊(->html doc #:splice? #t)
   </article>
   <div class="footer">
-    <ul>
-      <li><a href="/">Hjem</a></li>
-      <li><a href="https://github.com/stigjb">Github</a></li>
-      <li><a href="https://twitter.com/stigjohan">Twitter</a></li>
-      <li><a href="/kolofon.html">Kolofon</a></li>
-    </ul>
+    <div class="footer-nav">
+      <a href="/">Forside</a>
+      <a href="/kolofon.html">Kolofon</a>
+    </div>
+    <div class="footer-some">
+      <a href="https://github.com/stigjb">Github</a>
+      <a href="https://twitter.com/stigjohan">Twitter</a>
+      <a href="https://snabelen.no/@stig">Mastodon</a>
+    </div>
   </div>
 </body>
 </html>
