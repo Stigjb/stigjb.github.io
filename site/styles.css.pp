@@ -11,6 +11,7 @@
   --pink: ◊|pink|;
   --blue: ◊|blue|;
   --green: ◊|green|;
+  --gray-200: #e9ecef;
   --gray-400: ◊|gray-400|;
   --gray-600: ◊|gray-600|;
   --gray-900: ◊|gray-900|;
@@ -32,11 +33,14 @@ body {
   font-family: "IBM Plex Serif", serif;
 }
 
+main {
+  padding: 0 0.5rem;
+}
+
 article {
   max-width: var(--content-width);
   font-size: 1rem;
   line-height: 1.5;
-  padding: 0 0.5rem;
   margin: auto;
 }
 
@@ -151,12 +155,12 @@ a:hover {
   padding: 1rem 0.5rem;
   border-bottom: solid 5px var(--green);
   margin-bottom: 2rem;
-  background-image: linear-gradient(to right, var(--green), var(--white) 60%);
+  background: linear-gradient(to right, var(--green), var(--white) 60%);
 }
 
 .header-inner {
   background: var(--white);
-  max-width: calc(var(--content-width) - 1rem);
+  max-width: var(--content-width);
   margin: auto;
   padding: 0.5rem;
   border-radius: 0.25rem;
@@ -216,8 +220,13 @@ blockquote > footer::before {
 .canvas-wrapper {
   padding: 1rem;
   border-radius: 0.5rem;
-  background: var(--gray-400);
+  background: var(--gray-200);
   max-width: 400px;
+  margin: auto;
+}
+
+.canvas-wrapper > *:last-child {
+  margin-bottom: 0;
 }
 
 canvas {
