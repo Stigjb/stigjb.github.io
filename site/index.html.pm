@@ -8,9 +8,9 @@ jeg holder på med og tekniske temaer som opptar meg.
 ◊h2{Min bakgrunn}
 
 Jeg har en bachelorgrad i musikkvitenskap fra Universitetet i Oslo og en
-mastergrad i informatikk. Mitt spesialfelt er datalingvistikk, som også er kjent
-som språkteknologi, ◊em{computational linguistics} eller ◊em{Natural Language
-Processing} (NLP).
+mastergrad i informatikk. Mitt spesialfelt er datalingvistikk, som også er
+kjent som språkteknologi, ◊fl["en"]{computational linguistics} eller
+◊fl["en"]{Natural Language Processing} (NLP).
 
 ◊h2{Prosjekter med åpen kildekode}
 

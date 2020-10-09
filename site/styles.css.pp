@@ -3,7 +3,8 @@
 ◊(require "colors.rkt")
 
 :root {
-  --small-font-size: .875em;
+  --small-font-size: 87.5%;
+  --content-width: 36rem;
   --yellow: ◊|yellow|;
   --white: ◊|white|;
   --red: ◊|red|;
@@ -32,10 +33,11 @@ body {
 }
 
 article {
-  max-width: 36rem;
+  max-width: var(--content-width);
   font-size: 1rem;
   line-height: 1.5;
-  margin: 0 5rem;
+  padding: 0 0.5rem;
+  margin: auto;
 }
 
 p {
@@ -146,14 +148,16 @@ a:hover {
 
 .header {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   border-bottom: solid 5px var(--green);
   margin-bottom: 2rem;
-  background-image: linear-gradient(to right, var(--green), var(--white) 80%);
+  background-image: linear-gradient(to right, var(--green), var(--white) 60%);
 }
 
 .header-inner {
   background: var(--white);
+  max-width: calc(var(--content-width) - 1rem);
+  margin: auto;
   padding: 0.5rem;
   border-radius: 0.25rem;
 }
@@ -162,9 +166,27 @@ a:hover {
 
 .footer {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   border-top: solid 5px var(--green);
   margin-top: 2rem;
+}
+
+.footer-inner {
+  background: var(--white);
+  max-width: var(--content-width);
+  margin: auto;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.footer-nav, .footer-some {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 blockquote {
@@ -187,7 +209,7 @@ blockquote > footer::before {
 
 @media all and (max-width: 800px) {
   article {
-    margin: 0 5%;
+    margin: auto;
   }
 }
 

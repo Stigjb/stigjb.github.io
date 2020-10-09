@@ -30,6 +30,9 @@
 (define (link url . tx-elements)
   (txexpr 'a `((href ,url)) tx-elements))
 
+(define (fl lang-code . tx-elements)
+  (txexpr 'i `((lang ,lang-code)) tx-elements))
+
 (define ($ . xs)
   `(mathjax ,(apply string-append `("\\(" ,@xs "\\)"))))
 
