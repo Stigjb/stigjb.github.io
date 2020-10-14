@@ -217,7 +217,7 @@ blockquote > footer::before {
 
 @media all and (max-width: 720px) {
   article {
-    padding: 0 0.5rem;
+    padding: 0;
   }
 
   .sidenote { display: none; }
