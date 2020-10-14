@@ -36,8 +36,9 @@ article {
   max-width: var(--content-width);
   font-size: 1rem;
   line-height: 1.5;
-  padding: 0 0.5rem;
+  padding: 0 8rem 0 0.5rem;
   margin: auto;
+  counter-reset: sidenote-counter 0;
 }
 
 p {
@@ -257,4 +258,63 @@ button:active {
 button:disabled {
   background: var(--gray-400);
   color: var(--gray-600);
+}
+
+.sidenote,
+.marginnote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  font-size: var(--small-font-size);
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+x.sidenote-number:after,
+x.sidenote:before {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: var(--small-font-size);
+  margin-left: -0.1em;
+  font-variant-position: super;
+}
+
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  font-size: var(--small-font-size);
+  font-variant-position: super;
+}
+
+input.margin-toggle {
+  display: none;
+}
+
+label.sidenote-number {
+  display: inline;
+}
+
+label.margin-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+abbr {
+  font-size: var(--small-font-size);
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
 }

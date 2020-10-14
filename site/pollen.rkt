@@ -42,3 +42,9 @@
 (define (alert [category "primary"] . tx-elements)
   (let ([class (format "alert alert-~a" category)])
     (txexpr 'div `((class ,class)) tx-elements)))
+
+(define (sn sn-label . tx-elements)
+  `(@
+    (label ((for ,sn-label) (class "margin-toggle sidenote-number")))
+    (input ((type "checkbox") (id ,sn-label) (class "margin-toggle")))
+    (span ((class "sidenote")) ,@tx-elements)))
