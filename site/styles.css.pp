@@ -3,13 +3,17 @@
 ◊(require "colors.rkt")
 
 :root {
-  --small-font-size: .875em;
+  --small-font-size: 87.5%;
+  --line-width: 32rem;
+  --margin-width: 14rem;
+  --content-width: calc(var(--line-width) + var(--margin-width));
   --yellow: ◊|yellow|;
   --white: ◊|white|;
   --red: ◊|red|;
   --pink: ◊|pink|;
   --blue: ◊|blue|;
   --green: ◊|green|;
+  --gray-200: #e9ecef;
   --gray-400: ◊|gray-400|;
   --gray-600: ◊|gray-600|;
   --gray-900: ◊|gray-900|;
@@ -31,11 +35,17 @@ body {
   font-family: "IBM Plex Serif", serif;
 }
 
+main {
+  padding: 0 0.5rem;
+}
+
 article {
-  max-width: 36rem;
+  max-width: var(--content-width);
   font-size: 1rem;
   line-height: 1.5;
-  margin: 0 5rem;
+  padding-right: var(--margin-width);
+  margin: auto;
+  counter-reset: sidenote-counter 0;
 }
 
 p {
@@ -146,14 +156,16 @@ a:hover {
 
 .header {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   border-bottom: solid 5px var(--green);
   margin-bottom: 2rem;
-  background-image: linear-gradient(to right, var(--green), var(--white) 80%);
+  background: linear-gradient(to right, var(--green), var(--white) 60%);
 }
 
 .header-inner {
   background: var(--white);
+  max-width: var(--content-width);
+  margin: auto;
   padding: 0.5rem;
   border-radius: 0.25rem;
 }
@@ -162,11 +174,29 @@ a:hover {
 
 .footer {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   border-top: solid 5px var(--green);
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-nav, .footer-some {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-inner {
+  background: var(--white);
+  max-width: var(--content-width);
+  margin: auto;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
   flex-wrap: wrap;
 }
 
@@ -194,17 +224,39 @@ blockquote > footer::before {
   content: "\2014\00A0";
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 720px) {
   article {
-    margin: 0 5%;
+    padding: 0;
   }
+
+  .sidenote { display: none; }
+
+  .margin-toggle:checked ~ .sidenote {
+    color: #111;
+    font-size: 0.8rem;
+    display: block;
+    float: left;
+    left: 0rem;
+    clear: both;
+    width: 85%;
+    margin: 1rem 7.5%;
+    vertical-align: baseline;
+    position: relative;
+  }
+
+  label { cursor: pointer; }
 }
 
 .canvas-wrapper {
   padding: 1rem;
   border-radius: 0.5rem;
-  background: var(--gray-400);
+  background: var(--gray-200);
   max-width: 400px;
+  margin: auto;
+}
+
+.canvas-wrapper > *:last-child {
+  margin-bottom: 0;
 }
 
 canvas {
@@ -244,4 +296,63 @@ button:active {
 button:disabled {
   background: var(--gray-400);
   color: var(--gray-600);
+}
+
+.sidenote,
+.marginnote {
+  float: right;
+  clear: right;
+  margin-right: calc(-1 * var(--margin-width));
+  width: calc(var(--margin-width) - 2rem);
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  font-size: var(--small-font-size);
+  line-height: calc(1rem * 1.5);
+  vertical-align: baseline;
+  position: relative;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+x.sidenote-number:after,
+x.sidenote:before {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: var(--small-font-size);
+  margin-left: -0.1em;
+  font-variant-position: super;
+}
+
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  font-size: var(--small-font-size);
+  font-variant-position: super;
+}
+
+input.margin-toggle {
+  display: none;
+}
+
+label.sidenote-number {
+  display: inline;
+}
+
+label.margin-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+abbr {
+  font-size: var(--small-font-size);
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
 }

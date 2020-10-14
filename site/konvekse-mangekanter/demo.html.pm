@@ -21,10 +21,10 @@ Klikk i det hvite området under for å legge til hjørner i en mangekant. Når 
 har lagt til minst tre hjørner kan du trykke på «Gjør konveks».
 
 ◊div[#:class "canvas-wrapper"]{
-    ◊canvas[#:id "canvas" #:width "400" #:height "300"]
+  ◊canvas[#:id "canvas" #:width "400" #:height "300"]
+  ◊button[#:id "reset"]{Nullstill}
+  ◊button[#:id "go"]{Gjør konveks}
 }
-◊button[#:id "reset"]{Nullstill}
-◊button[#:id "go"]{Gjør konveks}
 
 ◊script[#:src "demo.js"]
 
