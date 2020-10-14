@@ -4,7 +4,9 @@
 
 :root {
   --small-font-size: 87.5%;
-  --content-width: 36rem;
+  --line-width: 32rem;
+  --margin-width: 14rem;
+  --content-width: calc(var(--line-width) + var(--margin-width));
   --yellow: ◊|yellow|;
   --white: ◊|white|;
   --red: ◊|red|;
@@ -41,7 +43,9 @@ article {
   max-width: var(--content-width);
   font-size: 1rem;
   line-height: 1.5;
+  padding-right: var(--margin-width);
   margin: auto;
+  counter-reset: sidenote-counter 0;
 }
 
 p {
@@ -211,10 +215,27 @@ blockquote > footer::before {
   content: "\2014\00A0";
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 720px) {
   article {
-    margin: auto;
+    padding: 0 0.5rem;
   }
+
+  .sidenote { display: none; }
+
+  .margin-toggle:checked ~ .sidenote {
+    color: #111;
+    font-size: 0.8rem;
+    display: block;
+    float: left;
+    left: 0rem;
+    clear: both;
+    width: 85%;
+    margin: 1rem 7.5%;
+    vertical-align: baseline;
+    position: relative;
+  }
+
+  la­bel { cur­sor: point­er; }
 }
 
 .canvas-wrapper {
@@ -266,4 +287,63 @@ button:active {
 button:disabled {
   background: var(--gray-400);
   color: var(--gray-600);
+}
+
+.sidenote,
+.marginnote {
+  float: right;
+  clear: right;
+  margin-right: calc(-1 * var(--margin-width));
+  width: calc(var(--margin-width) - 2rem);
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  font-size: var(--small-font-size);
+  line-height: calc(1rem * 1.5);
+  vertical-align: baseline;
+  position: relative;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+x.sidenote-number:after,
+x.sidenote:before {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: var(--small-font-size);
+  margin-left: -0.1em;
+  font-variant-position: super;
+}
+
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  font-size: var(--small-font-size);
+  font-variant-position: super;
+}
+
+input.margin-toggle {
+  display: none;
+}
+
+label.sidenote-number {
+  display: inline;
+}
+
+label.margin-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+abbr {
+  font-size: var(--small-font-size);
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
 }
