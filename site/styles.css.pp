@@ -307,23 +307,36 @@ button:disabled {
   counter-increment: sidenote-counter;
 }
 
-x.sidenote-number:after,
-x.sidenote:before {
+.sidenote-number:after,
+.sidenote:before {
   position: relative;
   vertical-align: baseline;
+  font-size: 0.8em;
+  top: -0.4rem;
+  left: 0rem;
 }
 
 .sidenote-number:after {
   content: counter(sidenote-counter);
-  font-size: var(--small-font-size);
-  margin-left: -0.1em;
-  font-variant-position: super;
 }
 
 .sidenote:before {
   content: counter(sidenote-counter) " ";
-  font-size: var(--small-font-size);
-  font-variant-position: super;
+}
+
+@supports (font-variant-position: super) {
+  .sidenote-number:after {
+    font-size: inherit;
+    margin-left: -0.1em;
+    font-variant-position: super;
+    position: static;
+  }
+
+  .sidenote:before {
+    font-variant-position: super;
+    position: static;
+    font-size: inherit;
+  }
 }
 
 input.margin-toggle {
