@@ -1,29 +1,11 @@
 <!DOCTYPE html>
-<html lang="nb">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Konvekse mangekanter | Stig Johan</title>
+<html lang="nb"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Konvekse mangekanter | Stig Johan|</title><link rel="icon" href="/favicon.png"/><link rel="stylesheet" href="/styles.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&amp;family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap"/><script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async=""></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css"/><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></head>
 
-  <link rel="icon" href="/favicon.png">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400&display=swap">
+<body><header class="header"><div class="header-inner"><h1>Konvekse mangekanter</h1>
+<p>Stig Johan Berggren</p></div></header>
 
-    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body>
-  <div class="header">
-    <div class="header-inner">
-      <h1>Konvekse mangekanter</h1>
-      <p>Stig Johan Berggren</p>
-    </div>
-  </div>
-  <article>
-    <div class="alert alert-warning">Siden er under skriving</div><div class="alert alert-primary">Denne artikkelen beskriver en framgangsmåte jeg har kommet fram til selv, og er sannsynligvis ikke optimal.</div><h2>Hvem artikkelen er for</h2><p>Denne artikkelen er skrevet for deg som liker geometri og programmeringsspråket Rust.</p><p>Vi vil først se på geometrien som ligger bak problemet. Så vil vi implementere algoritmen fra bunnen av. Så vil vi overføre programmet til å bruke et ferdig geometribibliotek som er publisert på crates.io.</p><h2>Hva er oppgaven vår</h2><p>Se for deg at du jobber i et selskap som leier ut elmopeder. Du vil ikke at kundene skal kjøre utenfor byen, så du har markert utleieområdet i et kart. Mopedene har GPS-mottaker, og du trenger å sjekke at posisjonen til hver moped er innenfor utleieområdet.</p><p>Det er viktig at programmet kjører lynraskt, men du kvier deg for å skrive C eller C++ fordi du er lei av å få segmenteringsfeil eller minnelekkasjer. Du har derfor valgt å skrive koden i <a href="https://rust-lang.org">Rust</a>.</p><p>Du er heller ikke klar over at det finnes biblioteker du kan bruke som løser oppgaven. For eksempel <a href="https://shapely.readthedocs.io/en/stable/manual.html">Shapely</a> for Python.</p><h2>Konvekse mangekanter</h2><p>Denne oppgaven blir lettere hvis vi begrenser oss til konvekse polygoner i første omgang. Alle mangekanter, konvekse eller ei, kan deles i flere mindre mangekanter som er konvekse.</p><p>Vi går også ut fra at vi bare har _enkle_ mangekanter, hvor ingen kanter krysser hverandre.</p><p>Et polygon, eller en mangekant, har ingen hjørner som går innover. En mer formell definisjon er at hvis du velger to vikårlige punkter på innsiden av mangekanten, vil alle punktene på den rette linjen mellom punktene også være på innsiden av mangekanten. Figuren under viser at dette ikke er tilfelle i en mangekant som ikke er konveks.</p><figure class="figure"><img src="konveks-og-ikke-konveks.svg" class="figure-img img-fluid"/><figcaption class="figure-caption">En konveks og en ikke-konveks mangekant.</figcaption></figure><p>Hver kant langs omkretsen av mangekanten kan strekkes ut i det uendelige i begge retninger, slik at den blir en linje som deler planet i to. For å skille mellom sidene av linjen trenger den en definert retning. Vi velger å gi kantene retning som tilsvarer å gå rundt omkretsen av mangekanten mot klokka. Da er hele mangekanten på venstre side av linjen. Da må også ethvert punkt på den høyre siden av linjen må være på utsiden av mangekanten.</p><figure class="figure"><img src="splitt-planet.svg" class="figure-img img-fluid"/><figcaption class="figure-caption">En linje langs en av kantene deler planet i to. Pilen viser linjens
+<main><article><div class="alert alert-warning">Siden er under skriving</div><div class="alert alert-primary">Denne artikkelen beskriver en framgangsmåte jeg har kommet fram til selv, og er sannsynligvis ikke optimal.</div><h2>Hvem artikkelen er for</h2><p>Denne artikkelen er skrevet for deg som liker geometri og programmeringsspråket Rust.</p><p>Vi vil først se på geometrien som ligger bak problemet. Så vil vi implementere algoritmen fra bunnen av. Så vil vi overføre programmet til å bruke et ferdig geometribibliotek som er publisert på crates.io.</p><h2>Hva er oppgaven vår</h2><p>Se for deg at du jobber i et selskap som leier ut elmopeder. Du vil ikke at kundene skal kjøre utenfor byen, så du har markert utleieområdet i et kart. Mopedene har GPS-mottaker, og du trenger å sjekke at posisjonen til hver moped er innenfor utleieområdet.</p><p>Det er viktig at programmet kjører lynraskt, men du kvier deg for å skrive C eller C++ fordi du er lei av å få segmenteringsfeil eller minnelekkasjer. Du har derfor valgt å skrive koden i <a href="https://rust-lang.org">Rust</a>.</p><p>Du er heller ikke klar over at det finnes biblioteker du kan bruke som løser oppgaven. For eksempel <a href="https://shapely.readthedocs.io/en/stable/manual.html">Shapely</a> for Python.</p><h2>Konvekse mangekanter</h2><p>Denne oppgaven blir lettere hvis vi begrenser oss til konvekse polygoner i første omgang. Alle mangekanter, konvekse eller ei, kan deles i flere mindre mangekanter som er konvekse.</p><p>Vi går også ut fra at vi bare har _enkle_ mangekanter, hvor ingen kanter krysser hverandre.</p><p>Et polygon, eller en mangekant, har ingen hjørner som går innover. En mer formell definisjon er at hvis du velger to vikårlige punkter på innsiden av mangekanten, vil alle punktene på den rette linjen mellom punktene også være på innsiden av mangekanten. Figuren under viser at dette ikke er tilfelle i en mangekant som ikke er konveks.</p><figure class="figure"><img src="konveks-og-ikke-konveks.svg" class="figure-img img-fluid"/><figcaption class="figure-caption">En konveks og en ikke-konveks mangekant.</figcaption></figure><p>Hver kant langs omkretsen av mangekanten kan strekkes ut i det uendelige i begge retninger, slik at den blir en linje som deler planet i to. For å skille mellom sidene av linjen trenger den en definert retning. Vi velger å gi kantene retning som tilsvarer å gå rundt omkretsen av mangekanten mot klokka. Da er hele mangekanten på venstre side av linjen. Da må også ethvert punkt på den høyre siden av linjen må være på utsiden av mangekanten.</p><figure class="figure"><img src="splitt-planet.svg" class="figure-img img-fluid"/><figcaption class="figure-caption">En linje langs en av kantene deler planet i to. Pilen viser linjens
 retning.</figcaption></figure><h3>Trigonometri</h3><p>Gitt tre punkter <mathjax>\(A, B, C\)</mathjax>, hvordan sjekker man om C er til høyre eller venstre for linjen definert av AB? Det er det samme som at vinkelen <mathjax>\(\angle
 {CAB}\)</mathjax> er mellom 180 og 360 grader. Fordi vi kun er interessert i vinkelen mellom dem, er det ikke relevant hvor på planet punktene befinner seg. Vi definerer vektorene <mathjax>\(\mathbf{d}\)</mathjax> og <mathjax>\(\mathbf{t}\)</mathjax> slik at vinkelen <mathjax>\(\theta_{\mathbf{dt}}\)</mathjax> er lik <mathjax>\(\angle{CAB}\)</mathjax>.</p><figure class="figure"><img src="punkter-og-vektorer.svg" class="figure-img img-fluid"/><figcaption class="figure-caption">Vektorene <mathjax>\(\mathbf{t}\)</mathjax> og <mathjax>\(\mathbf{d}\)</mathjax> er definert ut fra punktene A, B og C slik at
 <mathjax>\(\mathbf{t} = B - A\)</mathjax> og <mathjax>\(\mathbf{d} = C - A\)</mathjax>.</figcaption></figure><p>Vektoren <mathjax>\(\mathbf{d}\)</mathjax> er til venstre for <mathjax>\(\mathbf{t}\)</mathjax> hvis vinkelen mellom dem er i intervallet (0°, 180°), og til høyre for den hvis vinkelen er i intervallet (180°, 360°). Dette er også intervallene hvor sinus av en vinkel er henholds positiv og negativ. Spørsmålet om <mathjax>\(\mathbf{d}\)</mathjax> er til høyre for <mathjax>\(\mathbf{t}\)</mathjax> er derfor det samme som at <mathjax>\(\sin{\theta_{\mathbf{dt}}} &lt; 0\)</mathjax>.</p><h3>Prikkprodukt</h3><p>Definisjonen av prikkproduktet gir oss en måte å relatere koordinatene til vektorer med deres størrelse og retning.</p><p><mathjax>\[  \mathbf{u}\cdot\mathbf{v}
@@ -68,20 +50,10 @@ impl Vector {
         let t = Self(-other.1, other.0);
         self.dot(&amp;t) &lt; 0.
     }
-}</code></pre><p>Typene <code>Point</code> og <code>Vector</code> har samme struktur, men forskjellige metoder.</p><p><a href="point.rs">Her er filen</a></p>
-  </article>
-  <div class="footer">
-    <div class="footer-inner">
-      <div class="footer-nav">
-        <a href="/">Forside</a>
-        <a href="/kolofon.html">Kolofon</a>
-      </div>
-      <div class="footer-some">
-        <a href="https://github.com/stigjb">Github</a>
-        <a href="https://twitter.com/stigjohan">Twitter</a>
-        <a href="https://snabelen.no/@stig">Mastodon</a>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+}</code></pre><p>Typene <code>Point</code> og <code>Vector</code> har samme struktur, men forskjellige metoder.</p><p><a href="point.rs">Her er filen</a></p></article></main>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-nav"><a href="/">Forside</a>
+<a href="/kolofon.html">Kolofon</a></div>
+<div class="footer-some"><a href="https://github.com/stigjb">Github</a>
+<a href="https://twitter.com/stigjohan">Twitter</a>
+<a href="https://snabelen.no/@stig">Mastodon</a></div></div></footer></body></html>
