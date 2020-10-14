@@ -235,7 +235,7 @@ blockquote > footer::before {
     position: relative;
   }
 
-  la­bel { cur­sor: point­er; }
+  label { cursor: pointer; }
 }
 
 .canvas-wrapper {
