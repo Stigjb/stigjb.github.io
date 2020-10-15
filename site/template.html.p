@@ -20,7 +20,7 @@
       (meta ((charset "utf-8")))
       (meta ((name "viewport") (content "width=device-width, initial-scale=1")))
 
-      ◊,title{◊|here-title| | Stig Johan|}
+      ◊,title{◊|here-title| | Stig Johan}
 
       (link ((rel "icon") (href "/favicon.png")))
       (link ((rel "stylesheet") (href "/styles.css")))

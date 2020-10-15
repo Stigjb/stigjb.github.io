@@ -48,7 +48,7 @@ Denne oppgaven blir lettere hvis vi begrenser oss til konvekse polygoner i
 første omgang. Alle mangekanter, konvekse eller ei, kan deles i flere mindre
 mangekanter som er konvekse.
 
-Vi går også ut fra at vi bare har _enkle_ mangekanter, hvor ingen kanter
+Vi går også ut fra at vi bare har ◊em{enkle} mangekanter, hvor ingen kanter
 krysser hverandre.
 
 Et polygon, eller en mangekant, har ingen hjørner som går innover. En mer
