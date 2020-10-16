@@ -137,6 +137,7 @@ a:hover {
 
 .figure {
   display: inline-block;
+  margin: 0.5rem;
 }
 
 .figure-img {
@@ -346,4 +347,8 @@ abbr {
 
 .sidenote-number {
   counter-increment: sidenote-counter;
+}
+
+.row {
+  display: flex;
 }

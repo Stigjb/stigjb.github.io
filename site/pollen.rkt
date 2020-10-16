@@ -52,3 +52,6 @@
     (label ((for ,sn-label) (class "margin-toggle sidenote-number")))
     (input ((type "checkbox") (id ,sn-label) (class "margin-toggle")))
     (span ((class "sidenote")) ,@tx-elements)))
+
+(define (row . tx-elements)
+  `(div ((class "row")) ,@tx-elements))
