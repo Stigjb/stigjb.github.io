@@ -2,6 +2,7 @@
 
 ◊(require pollen/core txexpr)
 ◊(define here-title (or (select-from-metas 'title here) (symbol->string here)))
+◊(define here-date (or (select-from-metas 'date here) #f))
 
 ◊(define mathjax-script
   '(script ((id "MathJax-script")
@@ -33,7 +34,8 @@
       ◊header[#:class "header"]{
         ◊div[#:class "header-inner"]{
           ◊h1[here-title]
-          ◊p{Stig Johan Berggren}}}
+          ◊p{
+            Stig Johan Berggren ◊when/splice[here-date]{ – ◊here-date}}}}
 
       ◊`(main (article ,@(get-elements doc)))
 

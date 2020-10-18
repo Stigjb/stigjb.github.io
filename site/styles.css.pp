@@ -135,19 +135,32 @@ a:hover {
   border-color: #ffeeba;
 }
 
+figure {
+  margin: 0 0 1rem;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
 .figure {
   display: inline-block;
-  margin: 0.5rem;
 }
 
 .figure-img {
   margin-bottom: 0.5rem;
+  min-width: 250px;
   line-height: 1;
 }
 
 .figure-caption {
   font-size: var(--small-font-size);
   color: var(--gray-600);
+}
+
+.rounded {
+  border-radius 0.25rem;
 }
 
 .img-fluid {
@@ -308,8 +321,8 @@ button:disabled {
   counter-increment: sidenote-counter;
 }
 
-x.sidenote-number:after,
-x.sidenote:before {
+.sidenote-number:after,
+.sidenote:before {
   position: relative;
   vertical-align: baseline;
 }
@@ -351,4 +364,9 @@ abbr {
 
 .row {
   display: flex;
+  justify-content: space-around;
+}
+
+figure + figure {
+  margin-left: 0.5em;
 }

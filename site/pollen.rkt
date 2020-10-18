@@ -18,14 +18,18 @@
       #:exclude-tags '(pre figure)))))
 
 (define (figure url . tx-elements)
-  (let ([img-tx
-	  (txexpr 'img `((src ,url) (class "figure-img img-fluid")) empty)]
-	[cap-tx
-	  (txexpr 'figcaption '((class "figure-caption")) tx-elements)])
-   (txexpr 'figure '((class "figure")) (list img-tx cap-tx))))
+  `(figure ((class "figure"))
+    (img ((src ,url) (class "figure-img img-fluid")))
+    (figcaption ((class "figure-caption")) ,@tx-elements)))
   
+(define (figure* caption . tx-elements)
+  `(figure ((class "figure"))
+    ,@tx-elements
+    (figcaption ((class "figure-caption")) ,caption)))
+
 (define (code-block lang . tx-elements)
-  (cons 'pre (list (txexpr 'code `((class ,lang)) tx-elements))))
+  `(pre
+    (code ((class ,lang)) ,@tx-elements)))
 
 (define (link url . tx-elements)
   (txexpr 'a `((href ,url)) tx-elements))
