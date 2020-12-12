@@ -1,6 +1,7 @@
 #lang pollen
 
 ◊define-meta[title]{Stig Johan}
+◊define-meta[description]{Stig Johan Berggrens personlige nettsted}
 
 Denne hjemmesiden vil gradvis finne sin form. Her vil jeg skrive om prosjekter
 jeg holder på med og tekniske temaer som opptar meg.

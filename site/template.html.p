@@ -2,6 +2,9 @@
 
 ◊(require pollen/core txexpr)
 ◊(define here-title (or (select-from-metas 'title here) (symbol->string here)))
+◊(define here-description (or (select-from-metas 'description here) (here-title)))
+◊(define here-date (or (select-from-metas 'date here) #f))
+◊(define here-revised (or (select-from-metas 'revised here) #f))
 
 ◊(define mathjax-script
   '(script ((id "MathJax-script")
@@ -19,8 +22,10 @@
     ◊`(head
       (meta ((charset "utf-8")))
       (meta ((name "viewport") (content "width=device-width, initial-scale=1")))
+      ◊,(meta `((name "description") ,(content here-description)))
 
-      ◊,title{◊|here-title| | Stig Johan|}
+
+      ◊,title{◊|here-title| | Stig Johan}
 
       (link ((rel "icon") (href "/favicon.png")))
       (link ((rel "stylesheet") (href "/styles.css")))
@@ -33,7 +38,10 @@
       ◊header[#:class "header"]{
         ◊div[#:class "header-inner"]{
           ◊h1[here-title]
-          ◊p{Stig Johan Berggren}}}
+          ◊p{
+            Stig Johan Berggren
+            ◊when/splice[here-date]{ – ◊here-date}
+            ◊when/splice[here-revised]{ – ◊here-revised}}}}
 
       ◊`(main (article ,@(get-elements doc)))
 
