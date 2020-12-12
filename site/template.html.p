@@ -2,7 +2,7 @@
 
 ◊(require pollen/core txexpr)
 ◊(define here-title (or (select-from-metas 'title here) (symbol->string here)))
-◊(define here-description (or (select-from-metas 'description here) (here-title)))
+◊(define here-description (or (select-from-metas 'description here) here-title))
 ◊(define here-date (or (select-from-metas 'date here) #f))
 ◊(define here-revised (or (select-from-metas 'revised here) #f))
 
@@ -23,7 +23,6 @@
       (meta ((charset "utf-8")))
       (meta ((name "viewport") (content "width=device-width, initial-scale=1")))
       ◊,(meta `((name "description") ,(content here-description)))
-
 
       ◊,title{◊|here-title| | Stig Johan}
 
