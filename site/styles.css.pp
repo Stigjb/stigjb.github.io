@@ -109,10 +109,13 @@ pre code {
 a {
   color: var(--blue);
   text-decoration: none;
+  border-bottom: 1px solid var(--blue);
+  padding: 0 1px 0 1px;
+  margin: 0 -1px 0 -1px;
 }
 
 a:hover {
-  text-decoration: underline;
+  border-bottom-width: 3px;
 }
 
 .alert {
