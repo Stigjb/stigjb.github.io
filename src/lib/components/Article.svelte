@@ -9,4 +9,9 @@
 		margin: auto;
 		counter-reset: sidenote-counter 0;
 	}
+	@media all and (max-width: 720px) {
+		article {
+			padding: 0;
+		}
+	}
 </style>
