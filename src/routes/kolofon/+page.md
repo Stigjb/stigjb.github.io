@@ -9,18 +9,17 @@
 	</footer>
 </blockquote>
 
-<p>
-	Denne nettsiden er laget med <a href="https://svelte.dev/">Svelte</a>.Kildekoden til nettsiden er
-	åpen og ligger på <a href="https://github.com/Stigjb/stigjb.github.io">Github</a>. Innholdet
-	genereres av en Github Action ved nye commits til hovedgreinen, og serveres fra Github Pages.
-</p>
+Denne nettsiden er laget med [Svelte]. Kildekoden til nettsiden er åpen og
+ligger på [Github]. Innholdet genereres av en Github Action ved nye commits til
+hovedgreinen, og serveres fra Github Pages.
+[Svelte]: <https://svelte.dev/>
+[Github]: <https://github.com/Stigjb/stigjb.github.io>
 
-<p>
-	Nettsiden er satt i skrifttypene<a href="https://github.com/IBM/plex">IBM Plex Serif</a> og
-	<a href="https://github.com/mozilla/Fira">Fira Mono</a>, begge publisert under den åpne lisensen
-	<a href="https://scripts.sil.org/cms/scripts/page.php?id=OFL"><em>SIL Open Font License</em></a>,
-	versjon 1.1.
-</p>
+Nettsiden er satt i skrifttypene [IBM Plex Serif] og [Fira Mono], begge publisert
+under den åpne lisensen _[SIL Open Font License]_, versjon 1.1.
+[IBM Plex Serif]: <https://github.com/IBM/plex>
+[Fira Mono]: <https://github.com/mozilla/Fira>
+[SIL Open Font License]: <https://scripts.sil.org/cms/scripts/page.php?id=OFL>
 
 <style>
 	blockquote {

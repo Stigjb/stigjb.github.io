@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>404 ikke funnet</title>
+</svelte:head>
+
 <pre>
 ///////,,,,,&,,,logging___^&#(*&$#@
 __((( pass .. j0. eja.  . .(((&&& enter-code
@@ -15,3 +19,11 @@ www.more-sites-dot-sites ;;; j.a,joajijejj0f;;;;;; gov.california,,***** online
 ___&comment:__ too-deep-online;;; ___?not-deep-enough ,,;;;;
 __&&&:::;;  sheep?___&continue_to_sheepweb.plz &$&$&*
 </pre>
+
+<style>
+	pre {
+		overflow: visible;
+		/* background-color: #494949;
+		color: #85d2ff; */
+	}
+</style>

@@ -2,12 +2,12 @@
 	<div class="footer-inner">
 		<div class="footer-nav">
 			<a href="/">Forside</a>
-			<a href="/kolofon.html">Kolofon</a>
+			<a href="/kolofon">Kolofon</a>
 		</div>
 		<div class="footer-some">
 			<a href="https://github.com/stigjb">Github</a>
 			<a href="https://twitter.com/stigjohan">Twitter</a>
-			<a href="https://snabelen.no/@stig">Mastodon</a>
+			<a rel="me" href="https://snabelen.no/@stig">Mastodon</a>
 		</div>
 	</div>
 </footer>

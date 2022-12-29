@@ -1,6 +1,10 @@
+<script>
+	import { page } from '$app/stores';
+</script>
+
 <header class="header">
 	<div class="header-inner">
-		<h1>here-title</h1>
+		<h1>{$page.data.title}</h1>
 		<p>Stig Johan Berggren</p>
 		<!-- ◊p{
     Stig Johan Berggren

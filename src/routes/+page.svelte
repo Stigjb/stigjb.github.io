@@ -3,6 +3,10 @@
 	import Fl from '$lib/components/Fl.svelte';
 </script>
 
+<svelte:head>
+	<title>Stig Johan</title>
+</svelte:head>
+
 <p>
 	Denne hjemmesiden vil gradvis finne sin form. Her vil jeg skrive om prosjekter jeg holder på med
 	og tekniske temaer som opptar meg.
@@ -10,14 +14,14 @@
 
 <h2>Min bakgrunn</h2>
 
-Jeg har en bachelorgrad i musikkvitenskap fra Universitetet i Oslo og en mastergrad i informatikk.
-Mitt spesialfelt er datalingvistikk.
-<Sidenote tag="sn-nlp"
-	>også kjent som språkteknologi, <Fl lang="en">computational linguistics</Fl> eller <Fl lang="en"
-		><abbr title="Natural Language Processing">NLP</abbr></Fl
-	>
-	.</Sidenote
->
+<p>
+	Jeg har en bachelorgrad i musikkvitenskap fra Universitetet i Oslo og en mastergrad i informatikk.
+	Mitt spesialfelt er datalingvistikk.
+	<Sidenote tag="sn-nlp">
+		også kjent som språkteknologi, <Fl lang="en">computational linguistics</Fl> eller
+		<Fl lang="en"><abbr title="Natural Language Processing">NLP</abbr></Fl>.
+	</Sidenote>
+</p>
 
 <h2>Prosjekter med åpen kildekode</h2>
 
@@ -32,6 +36,8 @@ Mitt spesialfelt er datalingvistikk.
 </ul>
 <h2>Mine profiler på Internett</h2>
 
+<p>Se også bunnteksten.</p>
+
 <ul>
 	<li>
 		<a href="https://bokelskere.no/Stig">Bokelskere</a>
@@ -44,5 +50,8 @@ Mitt spesialfelt er datalingvistikk.
 	</li>
 	<li>
 		<a href="https://musescore.com/stig">Musescore</a>
+	</li>
+	<li>
+		<a href="https://www.geocaching.com/p/?guid=db9ebdb2-7a5d-4744-bde7-97a9ea17c82a">Geocaching</a>
 	</li>
 </ul>
