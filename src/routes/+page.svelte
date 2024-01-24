@@ -7,10 +7,7 @@
 	<title>Stig Johan</title>
 </svelte:head>
 
-<p>
-	Denne hjemmesiden vil gradvis finne sin form. Her vil jeg skrive om prosjekter jeg holder på med
-	og tekniske temaer som opptar meg.
-</p>
+<p>Velkommen til min nettside!</p>
 
 <h2>Min bakgrunn</h2>
 
@@ -34,6 +31,7 @@
 		nettleseren.
 	</li>
 </ul>
+
 <h2>Mine profiler på Internett</h2>
 
 <p>Se også bunnteksten.</p>

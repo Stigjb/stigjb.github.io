@@ -18,9 +18,9 @@ Det latinske alfabetet er det eneste navnet mitt er registrert med i noen offent
 
 Man skulle tro at skrivemåten med det latinske alfabetet sa seg selv, men det er to hensyn som av og til står i motsats. Skal skrivemåten eller uttalen holdes lik?
 
-Ikke alle finner det naturlig å uttale i-en lang. For eksempel vil engelsktalende ofte uttale det tilsvarende *rig*. En alternativ stavemåte lånt fra tysk, Stieg, vil kanskje gjøre det lettere å gjette at det skal rime på *league* og ikke *rig*.
+Ikke alle finner det naturlig å uttale i-en lang. For eksempel vil engelsktalende ofte uttale det tilsvarende _rig_. En alternativ stavemåte lånt fra tysk, Stieg, vil kanskje gjøre det lettere å gjette at det skal rime på _league_ og ikke _rig_.
 
-Vi skal ikke lengre enn til Danmark, hvor Stig også er et vanlig navn, før uttalen blir annerledes. På dansk er g-lyden i slutten av navnet ikke hard [fonetisk sett er det en stemt velar plosiv], som på norsk og svensk, derimot blir lyden i mange dialekter redusert gjennom en særegen dansk lydregel som kalles [*stød](*[https://denstoredanske.lex.dk/stød_-_sprogvidenskabeligt_begreb](https://denstoredanske.lex.dk/st%C3%B8d_-_sprogvidenskabeligt_begreb)). [ i det fonetiske alfabetet IPA kan det noteres [stiˀ] ] Jeg insisterer ikke på at navnet mitt skal uttales med hard g når jeg er i Danmark.
+Vi skal ikke lengre enn til Danmark, hvor Stig også er et vanlig navn, før uttalen blir annerledes. På dansk er g-lyden i slutten av navnet ikke hard [fonetisk sett er det en stemt velar plosiv], som på norsk og svensk, derimot blir lyden i mange dialekter redusert gjennom en særegen dansk lydregel som kalles [\*stød](<*[https://denstoredanske.lex.dk/stød_-_sprogvidenskabeligt_begreb](https://denstoredanske.lex.dk/st%C3%B8d_-_sprogvidenskabeligt_begreb)>). [ i det fonetiske alfabetet IPA kan det noteres [stiˀ] ] Jeg insisterer ikke på at navnet mitt skal uttales med hard g når jeg er i Danmark.
 
 ### Datateknisk
 
@@ -48,7 +48,7 @@ Den greske skrivemåten for musikeren Sting er Στινγκ - som også ender me
 
 ### スティーグ
 
-bonus: etternavnet mitt kan oversettes direkte til 山枝, *Yamaeda*, som klinger som genuine japanske familienavn som Yamamoto eller Yamada*.*
+bonus: etternavnet mitt kan oversettes direkte til 山枝, _Yamaeda_, som klinger som genuine japanske familienavn som Yamamoto eller Yamada*.*
 
 ### स्टिग
 

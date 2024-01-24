@@ -7,6 +7,7 @@
 		<div class="footer-some">
 			<a href="https://github.com/stigjb">Github</a>
 			<a href="https://twitter.com/stigjohan">Twitter</a>
+			<a href="https://x.com/stigjohan">X</a>
 			<a rel="me" href="https://snabelen.no/@stig">Mastodon</a>
 		</div>
 	</div>
@@ -18,6 +19,7 @@
 		padding: 1rem 0.5rem;
 		border-top: solid 5px var(--green);
 		margin-top: 2rem;
+		background: linear-gradient(to right, var(--gray-200) 60%, var(--green));
 	}
 	.footer-inner {
 		background: var(--white);
