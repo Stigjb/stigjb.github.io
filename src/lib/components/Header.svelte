@@ -14,12 +14,12 @@
 	header {
 		width: 100%;
 		padding: 1rem 0.5rem;
-		border-bottom: solid 5px var(--green);
 		margin-bottom: 2rem;
-		background: linear-gradient(to right, var(--green), var(--gray-200) 60%);
+		background: var(--color-secondary-1-3);
+		color: var(--color-secondary-1-1);
+		border-bottom: solid 5px var(--color-secondary-1-2);
 	}
 	header div {
-		background: var(--white);
 		max-width: var(--content-width);
 		margin: auto;
 		padding: 0.5rem;

@@ -17,12 +17,15 @@
 	.footer {
 		width: 100%;
 		padding: 1rem 0.5rem;
-		border-top: solid 5px var(--green);
 		margin-top: 2rem;
-		background: linear-gradient(to right, var(--gray-200) 60%, var(--green));
+		background: var(--color-secondary-2-3);
+		color: var(--color-secondary-2-1);
+		border-top: solid 5px var(--color-secondary-2-2);
+
+		--text-contrast: var(--color-secondary-2-1);
+		--bg-contrast: var(--color-secondary-2-2);
 	}
 	.footer-inner {
-		background: var(--white);
 		max-width: var(--content-width);
 		margin: auto;
 		padding: 0.5rem;

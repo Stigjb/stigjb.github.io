@@ -14,5 +14,7 @@
 <style>
 	main {
 		padding: 0 0.5rem;
+		max-width: var(--content-width);
+		margin: auto;
 	}
 </style>

@@ -3,64 +3,29 @@
 	--line-width: 32rem;
 	--margin-width: 14rem;
 	--content-width: calc(var(--line-width) + var(--margin-width));
-	--yellow: #94ad6d;
-	--white: #fff;
-	--red: #54617e;
-	--pink: #283248;
-	--blue: #0f182d;
-	--green: #24483c;
-	--gray-200: #b6e3d3;
-	--gray-400: #507e6e;
-	--gray-600: #0c2d21;
-	--gray-900: #000906;
+
+	--color-primary-0: #24483c;
+	--color-primary-1: #b6e3d3;
+	--color-primary-2: #507e6e;
+	--color-primary-3: #0c2d21;
+	--color-primary-4: #000906;
+
+	--color-secondary-1-0: #283248;
+	--color-secondary-1-1: #bbc7e3;
+	--color-secondary-1-2: #54617e;
+	--color-secondary-1-3: #0f182d;
+	--color-secondary-1-4: #010309;
+
+	--color-secondary-2-0: #506332;
+	--color-secondary-2-1: #e5f8c8;
+	--color-secondary-2-2: #94ad6d;
+	--color-secondary-2-3: #2c3e10;
+	--color-secondary-2-4: #080d00;
 }
 
-.color-primary-0 {
-	color: #24483c;
-} /* Main Primary color */
-.color-primary-1 {
-	color: #b6e3d3;
-}
-.color-primary-2 {
-	color: #507e6e;
-}
-.color-primary-3 {
-	color: #0c2d21;
-}
-.color-primary-4 {
-	color: #000906;
-}
-
-.color-secondary-1-0 {
-	color: #283248;
-} /* Main Secondary color (1) */
-.color-secondary-1-1 {
-	color: #bbc7e3;
-}
-.color-secondary-1-2 {
-	color: #54617e;
-}
-.color-secondary-1-3 {
-	color: #0f182d;
-}
-.color-secondary-1-4 {
-	color: #010309;
-}
-
-.color-secondary-2-0 {
-	color: #506332;
-} /* Main Secondary color (2) */
-.color-secondary-2-1 {
-	color: #e5f8c8;
-}
-.color-secondary-2-2 {
-	color: #94ad6d;
-}
-.color-secondary-2-3 {
-	color: #2c3e10;
-}
-.color-secondary-2-4 {
-	color: #080d00;
+.light-primary {
+	background: #ffffff;
+	color: var(--color-secondary-2-4);
 }
 
 html {
@@ -75,12 +40,14 @@ html {
 }
 
 body {
-	background: var(--white);
-	color: var(--gray-900);
+	color: var(--color-primary-4);
 	margin: 0;
 	font-family: 'IBM Plex Serif', serif;
-	max-width: 1280px;
+	/* max-width: 1280px; */
 	margin: auto;
+
+	--text-contrast: var(--color-secondary-1-3);
+	--bg-contrast: var(--color-primary-2);
 }
 
 p {
@@ -142,19 +109,14 @@ pre code {
 	word-break: normal;
 }
 
-a {
-	color: var(--blue);
-	text-decoration: none;
-	border-bottom: 1px solid var(--gray-400);
-	padding: 0 1px 0;
-	margin: 0 -1px 0;
+a[href] {
+	color: var(--text-contrast);
 }
 
-a:hover {
-	background: #eeffee;
+a[href]:hover {
+	background: var(--bg-contrast);
 	transition-property: background;
 	transition-duration: 200ms;
-	border-radius: 5px;
 }
 
 .alert {
