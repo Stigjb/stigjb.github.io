@@ -13,37 +13,38 @@
 	</div>
 </footer>
 
-<style>
+<style lang="scss">
 	.footer {
 		width: 100%;
 		padding: 1rem 0.5rem;
 		margin-top: 2rem;
-		background: var(--color-secondary-2-3);
-		color: var(--color-secondary-2-1);
-		border-top: solid 5px var(--color-secondary-2-2);
+		background: var(--color-secondary-1-0);
+		color: var(--color-secondary-1-1);
+		border-top: solid 5px var(--color-secondary-1-2);
 
-		--text-contrast: var(--color-secondary-2-1);
-		--bg-contrast: var(--color-secondary-2-2);
-	}
-	.footer-inner {
-		max-width: var(--content-width);
-		margin: auto;
-		padding: 0.5rem;
-		border-radius: 0.25rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: start;
-		flex-wrap: wrap;
-	}
-	.footer-nav,
-	.footer-some {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		margin: 0 -1em -1em 0;
-	}
-	.footer-nav a,
-	.footer-some a {
-		margin: 0 1em 1em 0;
+		--text-contrast: var(--color-secondary-1-1);
+		--bg-contrast: var(--color-secondary-1-3);
+		.footer-inner {
+			max-width: var(--content-width);
+			margin: auto;
+			padding: 0.5rem;
+			border-radius: 0.25rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: start;
+			flex-wrap: wrap;
+
+			.footer-nav,
+			.footer-some {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 0;
+				a[href] {
+					text-decoration: none;
+					padding: 0.5em;
+				}
+			}
+		}
 	}
 </style>

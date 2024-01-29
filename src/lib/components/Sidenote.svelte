@@ -6,7 +6,7 @@
 <input type="checkbox" id={tag} class="margin-toggle" />
 <span class="sidenote"><slot /></span>
 
-<style>
+<style lang="scss">
 	span {
 		float: right;
 		clear: right;
@@ -18,6 +18,12 @@
 		line-height: calc(1rem * 1.5);
 		vertical-align: baseline;
 		position: relative;
+		padding: 0.5em;
+		border: solid 1px var(--color-secondary-2-2);
+		background: var(--color-secondary-2-1);
+		color: var(--color-secondary-2-3);
+		--text-contrast: var(--color-primary-3);
+		--bg-contrast: var(--color-secondary-2-2);
 	}
 
 	label {

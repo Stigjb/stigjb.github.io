@@ -26,7 +26,7 @@ under den åpne lisensen _[SIL Open Font License]_, versjon 1.1.
 		font-size: var(--small-font-size);
 		line-height: 1.3;
 		padding-left: 1rem;
-		border-left: solid 3px var(--yellow);
+		border-left: solid 3px var(--color-secondary-2-2);
 		margin-left: 0;
 		margin-right: 0;
 	}

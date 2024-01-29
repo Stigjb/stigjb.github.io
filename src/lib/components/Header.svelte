@@ -11,7 +11,7 @@
 
 <header>
 	<div>
-		<h1>{title ? `${title} | ` : ''}Stig Johan</h1>
+		<h1><a href="/">{title ? `${title} | ` : ''}Stig Johan</a></h1>
 		<p>{subtitle}</p>
 	</div>
 </header>
@@ -21,9 +21,10 @@
 		width: 100%;
 		padding: 1rem 0.5rem;
 		margin-bottom: 2rem;
-		background: var(--color-secondary-1-3);
-		color: var(--color-secondary-1-1);
-		border-bottom: solid 5px var(--color-secondary-1-2);
+		background: var(--color-primary-0);
+		color: var(--color-primary-1);
+		--bg-contrast: var(--color-primary-3);
+		border-bottom: solid 5px var(--color-primary-2);
 		div {
 			max-width: var(--content-width);
 			margin: auto;
@@ -34,6 +35,10 @@
 			border-radius: 0.25rem;
 			h1 {
 				font-size: 3rem;
+				a[href] {
+					color: inherit;
+					text-decoration: none;
+				}
 			}
 			p:last-child {
 				font-style: italic;
