@@ -1,20 +1,25 @@
 <script>
-	import Article from '$lib/components/Article.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import '$lib/styles/style.css';
 </script>
 
-<Header />
+<div>
+	<Header />
 
-<main><Article><slot /></Article></main>
+	<main><slot /></main>
 
-<Footer />
+	<Footer />
+</div>
 
-<style>
-	main {
-		padding: 0 0.5rem;
-		max-width: var(--content-width);
-		margin: auto;
+<style lang="scss">
+	div {
+		min-height: 100%;
+		main {
+			padding: 0 0.5rem;
+			max-width: var(--content-width);
+			margin: auto;
+			flex-grow: 1;
+		}
 	}
 </style>

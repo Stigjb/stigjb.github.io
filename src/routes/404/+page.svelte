@@ -2,6 +2,7 @@
 	<title>404 ikke funnet</title>
 </svelte:head>
 
+<h1>Ikke funnet</h1>
 <pre>
 ///////,,,,,&,,,logging___^&#(*&$#@
 __((( pass .. j0. eja.  . .(((&&& enter-code
@@ -21,8 +22,17 @@ __&&&:::;;  sheep?___&continue_to_sheepweb.plz &$&$&*
 </pre>
 
 <style>
+	h1 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
 	pre {
+		padding: 0.5em;
 		overflow: visible;
+		background: var(--color-secondary-2-0);
+		color: var(--color-secondary-2-1);
+		--text-contrast: var(--color-primary-1);
+		--bg-contrast: var(--color-secondary-2-3);
 		/* background-color: #494949;
 		color: #85d2ff; */
 	}

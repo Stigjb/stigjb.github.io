@@ -4,7 +4,16 @@
 	const taglines = [
 		'et konsept fra Stig',
 		'vi gir oss aldri på Stig',
-		'ikke alle kan kalle seg det samme som Stig'
+		'ikke alle kan kalle seg det samme som Stig',
+		'have it Stig’s way',
+		// 'just Stig it',
+		'et lite stykke Stig',
+		'det skal godt gjøres å spise bare Stig',
+		'tiden går, Stig består',
+		'Stig kurerer gruff',
+		'because you’re worth Stig',
+		'Stig gir deg vinger',
+		'har du Stig har du lov'
 	];
 	const subtitle = taglines[Math.floor(Math.random() * taglines.length)];
 </script>
