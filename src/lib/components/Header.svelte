@@ -1,19 +1,20 @@
 <script>
 	import { page } from '$app/stores';
+
 	const title = $page.data.title;
 	const taglines = [
 		'et konsept fra Stig',
 		'vi gir oss aldri på Stig',
 		'ikke alle kan kalle seg det samme som Stig',
-		'have it Stig’s way',
 		// 'just Stig it',
 		'et lite stykke Stig',
 		'det skal godt gjøres å spise bare Stig',
 		'tiden går, Stig består',
 		'Stig kurerer gruff',
-		'because you’re worth Stig',
 		'Stig gir deg vinger',
-		'har du Stig har du lov'
+		'har du Stig har du lov',
+		{ l: 'en', t: 'have it Stig’s way' },
+		{ l: 'en', t: 'because you’re worth Stig' }
 	];
 	const subtitle = taglines[Math.floor(Math.random() * taglines.length)];
 </script>
@@ -21,7 +22,11 @@
 <header>
 	<div>
 		<h1><a href="/">{title ? `${title} | ` : ''}Stig Johan</a></h1>
-		<p>{subtitle}</p>
+		{#if typeof subtitle === 'object' && 'l' in subtitle}
+			<p lang={subtitle.l}>{subtitle.t}</p>
+		{:else}
+			<p>{subtitle}</p>
+		{/if}
 	</div>
 </header>
 

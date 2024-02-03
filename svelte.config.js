@@ -7,7 +7,16 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: '404.html',
+			precompress: false,
+			strict: true
+		}),
+		paths: {
+			base: process.argv.includes('dev') ? '' : 'process.env.BASE_PATH'
+		}
 	},
 	extensions: ['.svelte', '.md'],
 	preprocess: [
