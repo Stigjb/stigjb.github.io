@@ -1,8 +1,12 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <footer class="footer">
 	<div class="footer-inner">
 		<div class="footer-nav">
-			<a href="/">Forside</a>
-			<a href="/kolofon">Kolofon</a>
+			<a href="{base}/">Forside</a>
+			<a href="{base}/kolofon">Kolofon</a>
 		</div>
 		<div class="footer-some">
 			<a href="https://github.com/stigjb">Github</a>

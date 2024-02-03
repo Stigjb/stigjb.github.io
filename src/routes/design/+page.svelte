@@ -1,32 +1,36 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <div class="white">
 	<h3>Overskrift</h3>
-	<p>Tekst med en <a href="/">link</a></p>
+	<p>Tekst med en <a href="{base}/">link</a></p>
 </div>
 
 <div class="primary">
 	<h3>Overskrift</h3>
-	<p>Tekst med en <a href="/">link</a></p>
+	<p>Tekst med en <a href="{base}/">link</a></p>
 </div>
 <div class="secondary-1">
 	<h3>Overskrift</h3>
-	<p>Tekst med en <a href="/">link</a></p>
+	<p>Tekst med en <a href="{base}/">link</a></p>
 </div>
 <div class="secondary-2">
 	<h3>Overskrift</h3>
-	<p>Tekst med en <a href="/">link</a></p>
+	<p>Tekst med en <a href="{base}/">link</a></p>
 </div>
 
 <div class="primary-light">
 	<h3>Overskrift</h3>
-	<p>Tekst med en <a href="/">link</a></p>
+	<p>Tekst med en <a href="{base}/">link</a></p>
 </div>
 <div class="secondary-1-light">
 	<h3>Overskrift</h3>
-	<p>Tekst med en <a href="/">link</a></p>
+	<p>Tekst med en <a href="{base}/">link</a></p>
 </div>
 <div class="secondary-2-light">
 	<h3>Overskrift</h3>
-	<p>Tekst med en <a href="/">link</a></p>
+	<p>Tekst med en <a href="{base}/">link</a></p>
 </div>
 
 <style lang="scss">

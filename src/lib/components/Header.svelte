@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 
 	const title = $page.data.title;
@@ -21,7 +22,7 @@
 
 <header>
 	<div>
-		<h1><a href="/">{title ? `${title} | ` : ''}Stig Johan</a></h1>
+		<h1><a href="{base}/">{title ? `${title} | ` : ''}Stig Johan</a></h1>
 		{#if typeof subtitle === 'object' && 'l' in subtitle}
 			<p lang={subtitle.l}>{subtitle.t}</p>
 		{:else}
