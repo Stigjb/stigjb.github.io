@@ -4,18 +4,19 @@
 
 	const title = $page.data.title;
 	const taglines = [
+		// 'det skal godt gjøres å spise bare Stig',
 		'et konsept fra Stig',
-		'vi gir oss aldri på Stig',
-		'ikke alle kan kalle seg det samme som Stig',
-		// 'just Stig it',
 		'et lite stykke Stig',
-		'det skal godt gjøres å spise bare Stig',
-		'tiden går, Stig består',
-		'Stig kurerer gruff',
-		'Stig gir deg vinger',
 		'har du Stig har du lov',
+		'ikke alle kan kalle seg det samme som Stig',
+		'Stig gir deg vinger',
+		'Stig kurerer gruff',
+		'tiden går, Stig består',
+		'vi gir oss aldri på Stig',
+		// { l: 'en', t: 'just Stig it' },
+		{ l: 'en', t: 'because you’re worth Stig' },
 		{ l: 'en', t: 'have it Stig’s way' },
-		{ l: 'en', t: 'because you’re worth Stig' }
+		{ l: 'en', t: 'you’re not Stig when you’re hungry' }
 	];
 	const subtitle = taglines[Math.floor(Math.random() * taglines.length)];
 </script>

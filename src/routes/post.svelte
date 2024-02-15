@@ -1,12 +1,12 @@
-<script lang="js">
-	export let title;
-	export let date;
+<script lang="ts">
+	export let title: string;
+	export let date: string;
 </script>
 
 <article>
 	<h1>{title}</h1>
 
-	<p>Published: {date}</p>
+	<p>Publisert: {date}</p>
 
 	<slot />
 </article>
