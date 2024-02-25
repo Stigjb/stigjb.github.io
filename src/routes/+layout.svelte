@@ -15,6 +15,8 @@
 <style lang="scss">
 	div {
 		min-height: 100%;
+		display: flex;
+		flex-flow: column nowrap;
 		main {
 			padding: 0 0.5rem;
 			max-width: var(--content-width);

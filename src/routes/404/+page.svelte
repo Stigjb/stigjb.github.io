@@ -2,7 +2,7 @@
 	<title>404 ikke funnet</title>
 </svelte:head>
 
-<h1>Ikke funnet</h1>
+<h1>Finner ikke siden</h1>
 <pre>
 ///////,,,,,&,,,logging___^&#(*&$#@
 __((( pass .. j0. eja.  . .(((&&& enter-code
@@ -33,7 +33,6 @@ __&&&:::;;  sheep?___&continue_to_sheepweb.plz &$&$&*
 		color: var(--color-secondary-2-1);
 		--text-contrast: var(--color-primary-1);
 		--bg-contrast: var(--color-secondary-2-3);
-		/* background-color: #494949;
-		color: #85d2ff; */
+		text-shadow: -1px 1px 0 var(--color-secondary-2-2);
 	}
 </style>

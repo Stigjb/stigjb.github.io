@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<footer class="footer">
+<footer>
 	<div class="footer-inner">
 		<div class="footer-nav">
 			<a href="{base}/">Forside</a>
@@ -18,13 +18,15 @@
 </footer>
 
 <style lang="scss">
-	.footer {
+	footer {
 		width: 100%;
 		padding: 1rem 0.5rem;
 		margin-top: 2rem;
 		background: var(--color-secondary-1-0);
 		color: var(--color-secondary-1-1);
 		border-top: solid 5px var(--color-secondary-1-2);
+		flex-grow: 0;
+		flex-shrink: 0;
 
 		--text-contrast: var(--color-secondary-1-1);
 		--bg-contrast: var(--color-secondary-1-3);

@@ -43,6 +43,8 @@
 		color: var(--color-primary-1);
 		--bg-contrast: var(--color-primary-3);
 		border-bottom: solid 5px var(--color-primary-2);
+		flex-grow: 0;
+		flex-shrink: 0;
 		div {
 			max-width: var(--content-width);
 			margin: auto;
