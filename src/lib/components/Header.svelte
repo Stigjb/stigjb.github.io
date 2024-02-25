@@ -11,12 +11,14 @@
 		'ikke alle kan kalle seg det samme som Stig',
 		'Stig gir deg vinger',
 		'Stig kurerer gruff',
+		'Stig til folket',
 		'tiden går, Stig består',
 		'vi gir oss aldri på Stig',
 		// { l: 'en', t: 'just Stig it' },
 		{ l: 'en', t: 'because you’re worth Stig' },
 		{ l: 'en', t: 'have it Stig’s way' },
-		{ l: 'en', t: 'you’re not Stig when you’re hungry' }
+		{ l: 'en', t: 'you’re not Stig when you’re hungry' },
+		{ l: 'en', t: 'the best a Stig can get' }
 	];
 	const subtitle = taglines[Math.floor(Math.random() * taglines.length)];
 </script>

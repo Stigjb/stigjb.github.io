@@ -1,5 +1,5 @@
-<script lang="ts">
-	export let tag: string;
+<script>
+	export let tag;
 </script>
 
 <label for={tag} class="margin-toggle sidenote-number" />

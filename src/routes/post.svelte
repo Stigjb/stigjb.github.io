@@ -1,6 +1,6 @@
-<script lang="ts">
-	export let title: string;
-	export let date: string;
+<script>
+	export let title;
+	export let date;
 </script>
 
 <article>
