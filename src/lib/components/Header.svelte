@@ -58,6 +58,7 @@
 				a[href] {
 					color: inherit;
 					text-decoration: none;
+					padding: 0.5rem 1rem;
 				}
 			}
 			p:last-child {

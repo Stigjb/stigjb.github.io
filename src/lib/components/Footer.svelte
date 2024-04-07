@@ -7,6 +7,7 @@
 		<div class="footer-nav">
 			<a href="{base}/">Forside</a>
 			<a href="{base}/kolofon">Kolofon</a>
+			<a href="{base}/bloggrull">Bloggrull</a>
 		</div>
 		<div class="footer-some">
 			<a href="https://github.com/stigjb">Github</a>
@@ -48,7 +49,10 @@
 				gap: 0;
 				a[href] {
 					text-decoration: none;
-					padding: 0.5em;
+					padding: 0.25em 1em;
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 			}
 		}

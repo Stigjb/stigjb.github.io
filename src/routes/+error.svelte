@@ -1,3 +1,3 @@
-<h1>Å nei!</h1>
+<h1>Å nei, det har skjedd en feil!</h1>
 
-<p>Fytti katta!</p>
+<p>Fytti katta, det var som bare!</p>
