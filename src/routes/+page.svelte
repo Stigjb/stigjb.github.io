@@ -1,3 +1,7 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <svelte:head>
 	<title>Stig Johan</title>
 </svelte:head>
@@ -21,5 +25,5 @@
 <p>
 	I bunnteksten er det linker til mine profiler på enkelte av de mest populære sosiale nettstedene.
 	Du kan finne en mer utfyllende oversikt på
-	<a href="/identiteter-internett">denne siden.</a>
+	<a href="{base}/identiteter-internett">denne siden.</a>
 </p>
