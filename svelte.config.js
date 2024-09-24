@@ -8,7 +8,7 @@ const config = {
 	// for more information about preprocessors
 	kit: {
 		adapter: adapter({
-			fallback: '404.html'
+			fallback: 'ikke-funnet.html'
 		}),
 		paths: {
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH

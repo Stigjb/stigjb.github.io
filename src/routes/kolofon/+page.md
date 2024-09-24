@@ -1,3 +1,8 @@
+---
+title: Bloggrull
+date: '2024-04-07'
+---
+
 <blockquote cite="https://snl.no/kolofon">
 	Kolofon, liten tekst med tekniske opplysninger og opplysninger om en bok, en avis, et tidsskrift
 	eller et magasins utgivelse: copyright, trykkested og -år, papir og skrift, bokbinder, opplag,
