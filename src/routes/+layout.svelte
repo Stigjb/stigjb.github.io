@@ -14,7 +14,7 @@
 
 <style lang="scss">
 	div {
-		min-height: 100%;
+		min-height: 100dvh;
 		display: flex;
 		flex-flow: column nowrap;
 		main {
