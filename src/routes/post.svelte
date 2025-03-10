@@ -1,6 +1,5 @@
-<script>
-	export let title;
-	export let date;
+<script lang="ts">
+	let { title, date, children } = $props();
 </script>
 
 <article>
@@ -8,5 +7,5 @@
 
 	<p>Publisert: {date}</p>
 
-	<slot />
+	{@render children?.()}
 </article>

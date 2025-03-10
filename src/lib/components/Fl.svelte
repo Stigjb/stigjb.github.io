@@ -1,5 +1,5 @@
-<script>
-	export let lang;
+<script lang="ts">
+	let { lang, children } = $props();
 </script>
 
-<i {lang}><slot /></i>
+<i {lang}>{@render children?.()}</i>

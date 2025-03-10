@@ -1,10 +1,10 @@
-<script>
-	export let tag;
+<script lang="ts">
+	let { tag, children } = $props();
 </script>
 
-<label for={tag} class="margin-toggle sidenote-number" />
+<label for={tag} class="margin-toggle sidenote-number"></label>
 <input type="checkbox" id={tag} class="margin-toggle" />
-<span class="sidenote"><slot /></span>
+<span class="sidenote">{@render children?.()}</span>
 
 <style lang="scss">
 	span {

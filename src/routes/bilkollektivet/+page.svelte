@@ -95,7 +95,7 @@
 	ikke er noen synlige markører i kartet, kan det være at API-et er nede.
 </p>
 
-<div id="map" style="height: 400px;" />
+<div id="map" style="height: 400px;"></div>
 
 <style>
 	#map {
