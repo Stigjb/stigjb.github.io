@@ -12,6 +12,7 @@
 		'et lite stykke Stig',
 		'har du Stig har du lov',
 		'ikke alle kan kalle seg det samme som Stig',
+		'ingen slagord, bare Stig',
 		'tiden går, Stig består',
 		'vi gir oss aldri på Stig',
 		'vi gjør ditt Stig-liv enklere',

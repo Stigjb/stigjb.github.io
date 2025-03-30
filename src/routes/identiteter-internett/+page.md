@@ -15,6 +15,7 @@ Jeg har identiteter rundt omkring på Internett. Her en liste over noen av dem.
 - [Mastodon](https://snabelen.no/@stig)
 - [Musescore](https://musescore.com/stig)
 - [Online Go Server](https://online-go.com/player/94272/)
+- [Strava](https://www.strava.com/athletes/stigjb)
 - [The Storygraph](https://app.thestorygraph.com/profile/hjullaster)
 
 Vil du ringe eller sende meg en SMS? Mitt telefonnummer er produktet av det 166. og 9020.
