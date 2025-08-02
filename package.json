@@ -35,7 +35,8 @@
 	},
 	"type": "module",
 	"volta": {
-		"node": "20.11.0"
+		"node": "22.18.0",
+		"npm": "11.5.2"
 	},
 	"dependencies": {
 		"leaflet": "^1.9.4"
