@@ -7,6 +7,6 @@ Ordet _blogroll_ har blitt brukt på det engelskspråklige Internett om en enkel
 liste på en hjemmeside med linker til andres hjemmesider.  Jeg har oversatt
 ordet til «bloggrull», og her er min.
 
-- [P-Dog](https://pdog.no)
+- [Petter Dog](https://petter.dog)
 - [Bjørkhaug bøker](https://bjoerkhaug.fludal.no)
 - [Tanker fra en Supertenker](https://marienblogg.no)
