@@ -1,11 +1,11 @@
 <script lang="ts">
-	let { title, date, children } = $props();
+  let { title, date, children } = $props();
 </script>
 
 <article>
-	<h1>{title}</h1>
+  <h1>{title}</h1>
 
-	<p>Publisert: {date}</p>
+  <p>Publisert: {date}</p>
 
-	{@render children?.()}
+  {@render children?.()}
 </article>

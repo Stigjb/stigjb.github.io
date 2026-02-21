@@ -1,32 +1,32 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer.svelte';
-	import Header from '$lib/components/Header.svelte';
-	import '$lib/styles/style.css';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
+  import Footer from '$lib/components/Footer.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import '$lib/styles/style.css';
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
 
-	let { children }: Props = $props();
+  let { children }: Props = $props();
 </script>
 
 <div>
-	<Header />
+  <Header />
 
-	<main>{@render children?.()}</main>
+  <main>{@render children?.()}</main>
 
-	<Footer />
+  <Footer />
 </div>
 
 <style lang="scss">
-	div {
-		min-height: 100dvh;
-		display: flex;
-		flex-flow: column nowrap;
-		main {
-			padding: 0 0.5rem;
-			max-width: var(--content-width);
-			margin: auto;
-			flex-grow: 1;
-		}
-	}
+  div {
+    min-height: 100dvh;
+    display: flex;
+    flex-flow: column nowrap;
+    main {
+      padding: 0 0.5rem;
+      max-width: var(--content-width);
+      margin: auto;
+      flex-grow: 1;
+    }
+  }
 </style>
