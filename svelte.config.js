@@ -25,7 +25,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			layout: {
-				_: join(__dirname, './src/routes/post.svelte'),
+				_: join(__dirname, './src/routes/post.svelte')
 			}
 		})
 	]

@@ -29,5 +29,5 @@
 </p>
 
 <p>
-  Besøk gjerne geografibloggen min på <a href="https://ekvinor.no">ekvinor.no</a>!
+	Besøk gjerne geografibloggen min på <a href="https://ekvinor.no">ekvinor.no</a>!
 </p>

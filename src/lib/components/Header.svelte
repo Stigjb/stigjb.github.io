@@ -27,7 +27,7 @@
 		{ l: 'en', t: 'have it Stig’s way' },
 		{ l: 'en', t: 'more of the Stig stuff' },
 		{ l: 'en', t: 'the best a Stig can get' },
-		{ l: 'en', t: 'you’re not Stig when you’re hungry' },
+		{ l: 'en', t: 'you’re not Stig when you’re hungry' }
 	];
 	const subtitle = taglines[Math.floor(Math.random() * taglines.length)];
 </script>
