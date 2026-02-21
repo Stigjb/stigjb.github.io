@@ -1,5 +1,5 @@
 ---
-title: Bloggrull
+title: Kolofon
 date: '2024-04-07'
 ---
 

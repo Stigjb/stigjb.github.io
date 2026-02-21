@@ -1,6 +1,11 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -19,7 +24,9 @@ const config = {
 		preprocess(),
 		mdsvex({
 			extensions: ['.md'],
-			layout: 'src/routes/post.svelte'
+			layout: {
+				_: join(__dirname, './src/routes/post.svelte'),
+			}
 		})
 	]
 };

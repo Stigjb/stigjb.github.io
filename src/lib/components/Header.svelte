@@ -9,6 +9,7 @@
 		'Stig kurerer gruff',
 		'Stig til folket',
 		'bobler av Stig',
+		'en Stig er nok',
 		'et konsept fra Stig',
 		'et lite stykke Stig',
 		'har du Stig har du lov',
