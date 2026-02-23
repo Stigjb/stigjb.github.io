@@ -7,6 +7,7 @@ Jeg har identiteter rundt omkring på Internett. Her en liste over noen av dem.
 
 - [Bluesky](https://bsky.app/profile/hjullaster.bsky.social)
 - [Bokelskere](https://bokelskere.no/Stig)
+- [Codeberg](https://codeberg.org/stigjohan)
 - [Finn](https://www.finn.no/profile?userId=1718889862)
 - [Geocaching](https://www.geocaching.com/p/?guid=db9ebdb2-7a5d-4744-bde7-97a9ea17c82a)
 - [Github](https://github.com/Stigjb)

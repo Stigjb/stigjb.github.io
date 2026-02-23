@@ -11,6 +11,7 @@
     </div>
     <div class="footer-some">
       <a href="https://github.com/stigjb">Github</a>
+      <a href="https://codeberg.org/stigjohan">Codeberg</a>
       <a href="https://bsky.app/profile/hjullaster.bsky.social">Bluesky</a>
       <a rel="me" href="https://snabelen.no/@stig">Mastodon</a>
     </div>
