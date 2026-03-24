@@ -17,16 +17,18 @@
   <Footer />
 </div>
 
-<style lang="scss">
+<style lang="css">
   div {
     min-height: 100dvh;
     display: flex;
     flex-flow: column nowrap;
-    main {
-      padding: 0 0.5rem;
-      max-width: var(--content-width);
-      margin: auto;
-      flex-grow: 1;
-    }
+  }
+
+  main {
+    padding: 0 0.5rem;
+    width: 100%;
+    max-width: var(--content-width);
+    margin: auto;
+    flex-grow: 1;
   }
 </style>

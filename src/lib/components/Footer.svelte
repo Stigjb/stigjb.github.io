@@ -1,13 +1,13 @@
 <script>
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
 </script>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-nav">
-      <a href="{base}/">Forside</a>
-      <a href="{base}/kolofon">Kolofon</a>
-      <a href="{base}/bloggrull">Bloggrull</a>
+      <a href={resolve('/')}>Forside</a>
+      <a href={resolve('/kolofon')}>Kolofon</a>
+      <a href={resolve('/bloggrull')}>Bloggrull</a>
     </div>
     <div class="footer-some">
       <a href="https://github.com/stigjb">Github</a>
@@ -18,7 +18,7 @@
   </div>
 </footer>
 
-<style lang="scss">
+<style lang="css">
   footer {
     width: 100%;
     padding: 1rem 0.5rem;
@@ -31,29 +31,30 @@
 
     --text-contrast: var(--color-secondary-1-1);
     --bg-contrast: var(--color-secondary-1-3);
-    .footer-inner {
-      max-width: var(--content-width);
-      margin: auto;
-      padding: 0.5rem;
-      border-radius: 0.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      flex-wrap: wrap;
+  }
 
-      .footer-nav,
-      .footer-some {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0;
-        a[href] {
-          text-decoration: none;
-          padding: 0.25em 1em;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
+  footer .footer-inner {
+    max-width: var(--content-width);
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+  }
+
+  footer .footer-nav,
+  footer .footer-some {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    a[href] {
+      text-decoration: none;
+      padding: 0.25em 1em;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

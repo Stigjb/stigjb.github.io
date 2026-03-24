@@ -8,7 +8,7 @@
 
 <article>{@render children?.()}</article>
 
-<style>
+<style lang="css">
   article {
     max-width: var(--content-width);
     font-size: 1rem;

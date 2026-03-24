@@ -1,41 +1,51 @@
 <script>
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
 </script>
 
-<div class="white">
-  <h3>Overskrift</h3>
-  <p>Tekst med en <a href="{base}/">link</a></p>
-</div>
+<article>
+  <div class="white">
+    <h3>Overskrift</h3>
+    <p>Tekst med en <a href={resolve('/')}>link</a></p>
+  </div>
 
-<div class="primary">
-  <h3>Overskrift</h3>
-  <p>Tekst med en <a href="{base}/">link</a></p>
-</div>
-<div class="secondary-1">
-  <h3>Overskrift</h3>
-  <p>Tekst med en <a href="{base}/">link</a></p>
-</div>
-<div class="secondary-2">
-  <h3>Overskrift</h3>
-  <p>Tekst med en <a href="{base}/">link</a></p>
-</div>
+  <div class="primary">
+    <h3>Overskrift</h3>
+    <p>Tekst med en <a href={resolve('/')}>link</a></p>
+  </div>
+  <div class="secondary-1">
+    <h3>Overskrift</h3>
+    <p>Tekst med en <a href={resolve('/')}>link</a></p>
+  </div>
+  <div class="secondary-2">
+    <h3>Overskrift</h3>
+    <p>Tekst med en <a href={resolve('/')}>link</a></p>
+  </div>
 
-<div class="primary-light">
-  <h3>Overskrift</h3>
-  <p>Tekst med en <a href="{base}/">link</a></p>
-</div>
-<div class="secondary-1-light">
-  <h3>Overskrift</h3>
-  <p>Tekst med en <a href="{base}/">link</a></p>
-</div>
-<div class="secondary-2-light">
-  <h3>Overskrift</h3>
-  <p>Tekst med en <a href="{base}/">link</a></p>
-</div>
+  <div class="primary-light">
+    <h3>Overskrift</h3>
+    <p>Tekst med en <a href={resolve('/')}>link</a></p>
+  </div>
+  <div class="secondary-1-light">
+    <h3>Overskrift</h3>
+    <p>Tekst med en <a href={resolve('/')}>link</a></p>
+  </div>
+  <div class="secondary-2-light">
+    <h3>Overskrift</h3>
+    <p>Tekst med en <a href={resolve('/')}>link</a></p>
+  </div>
+</article>
 
-<style lang="scss">
+<style lang="css">
   div {
-    padding: 0.5rem 1rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  p {
+    margin-bottom: 0;
   }
   .white {
     background: white;

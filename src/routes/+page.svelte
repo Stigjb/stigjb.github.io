@@ -1,5 +1,5 @@
 <script>
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -25,7 +25,7 @@
 <p>
   I bunnteksten er det linker til mine profiler på enkelte av de mest populære sosiale nettstedene.
   Du kan finne en mer utfyllende oversikt på
-  <a href="{base}/identiteter-internett">denne siden.</a>
+  <a href={resolve('/identiteter-internett')}>denne siden.</a>
 </p>
 
 <p>

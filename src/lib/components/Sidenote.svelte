@@ -6,7 +6,7 @@
 <input type="checkbox" id={tag} class="margin-toggle" />
 <span class="sidenote">{@render children?.()}</span>
 
-<style lang="scss">
+<style lang="css">
   span {
     float: right;
     clear: right;
