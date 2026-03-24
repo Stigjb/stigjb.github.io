@@ -14,10 +14,12 @@ date: '2024-04-07'
 	</footer>
 </blockquote>
 
-Denne nettsiden er laget med [Svelte]. Kildekoden til nettsiden er åpen og
-ligger på [Github]. Innholdet genereres av en Github Action ved nye commits til
-hovedgreinen, og serveres fra Github Pages.
+Denne nettsiden er laget med [Svelte], [SvelteKit] og en statisk adapter.
+Kildekoden til nettsiden er åpen og ligger på [Codeberg] og [Github].
+Innholdet genereres av en Github Action ved nye commits til hovedgreinen, og serveres fra Github Pages.
 [Svelte]: <https://svelte.dev/>
+[SvelteKit]: <https://svelte.dev/docs/kit/introduction>
+[Codeberg]: <https://codeberg.org/stigjohan/stigjohan.no>
 [Github]: <https://github.com/Stigjb/stigjb.github.io>
 
 Nettsiden er satt i skrifttypene [IBM Plex Serif] og [Fira Mono], begge publisert
