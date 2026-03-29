@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-static';
-import preprocess from 'svelte-preprocess';
+import { sveltePreprocess } from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -16,13 +16,13 @@ const config = {
       fallback: 'ikke-funnet.html',
     }),
     paths: {
-      base: process.argv.includes('dev') ? '' : process.env.BASE_PATH,
+      base: '',
       relative: false,
     },
   },
   extensions: ['.svelte', '.md'],
   preprocess: [
-    preprocess(),
+    sveltePreprocess(),
     mdsvex({
       extensions: ['.md'],
       layout: {

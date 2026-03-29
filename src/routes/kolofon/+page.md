@@ -3,6 +3,21 @@ title: Kolofon
 date: '2024-04-07'
 ---
 
+Denne nettsiden er laget med [Svelte], [SvelteKit] og en statisk adapter.
+Kildekoden til nettsiden er åpen og ligger på [Codeberg] og [Github].
+Hele siden kompileres som statiske filer, og bor på et webhotell fra [Gigahost].
+[Svelte]: <https://svelte.dev/>
+[SvelteKit]: <https://svelte.dev/docs/kit/introduction>
+[Codeberg]: <https://codeberg.org/stigjohan/stigjohan.no>
+[Github]: <https://github.com/Stigjb/stigjb.github.io>
+[Gigahost]: <https://gigahost.no/webhotell>
+
+Nettsiden er satt i skrifttypene [IBM Plex Serif] og [Fira Mono], begge publisert
+under den åpne lisensen _[SIL Open Font License]_, versjon 1.1.
+[IBM Plex Serif]: <https://github.com/IBM/plex>
+[Fira Mono]: <https://github.com/mozilla/Fira>
+[SIL Open Font License]: <https://scripts.sil.org/cms/scripts/page.php?id=OFL>
+
 <blockquote cite="https://snl.no/kolofon">
 	Kolofon, liten tekst med tekniske opplysninger og opplysninger om en bok, en avis, et tidsskrift
 	eller et magasins utgivelse: copyright, trykkested og -år, papir og skrift, bokbinder, opplag,
@@ -13,20 +28,6 @@ date: '2024-04-07'
 		2020 fra https://snl.no/kolofon
 	</footer>
 </blockquote>
-
-Denne nettsiden er laget med [Svelte], [SvelteKit] og en statisk adapter.
-Kildekoden til nettsiden er åpen og ligger på [Codeberg] og [Github].
-Innholdet genereres av en Github Action ved nye commits til hovedgreinen, og serveres fra Github Pages.
-[Svelte]: <https://svelte.dev/>
-[SvelteKit]: <https://svelte.dev/docs/kit/introduction>
-[Codeberg]: <https://codeberg.org/stigjohan/stigjohan.no>
-[Github]: <https://github.com/Stigjb/stigjb.github.io>
-
-Nettsiden er satt i skrifttypene [IBM Plex Serif] og [Fira Mono], begge publisert
-under den åpne lisensen _[SIL Open Font License]_, versjon 1.1.
-[IBM Plex Serif]: <https://github.com/IBM/plex>
-[Fira Mono]: <https://github.com/mozilla/Fira>
-[SIL Open Font License]: <https://scripts.sil.org/cms/scripts/page.php?id=OFL>
 
 <style>
 	blockquote {
