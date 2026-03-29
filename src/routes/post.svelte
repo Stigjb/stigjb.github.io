@@ -7,6 +7,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>{title && `${title} | `}Stig Johan</title>
+</svelte:head>
+
 <h1>{title}</h1>
 {@render children?.()}
 <p>Publisert <time datetime={date}>{dateFormatter.format(new Date(date))}</time></p>
