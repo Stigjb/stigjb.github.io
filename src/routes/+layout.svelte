@@ -1,4 +1,9 @@
 <script lang="ts">
+  import '@fontsource/fira-mono';
+  import '@fontsource/ibm-plex-serif/400.css';
+  import '@fontsource/ibm-plex-serif/400-italic.css';
+  import '@fontsource/ibm-plex-serif/500.css';
+  import '@fontsource/ibm-plex-serif/700.css';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import '$lib/styles/style.css';
