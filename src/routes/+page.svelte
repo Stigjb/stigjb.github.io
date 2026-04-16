@@ -20,6 +20,14 @@
   <li>Jeg har studert musikkvitenskap og informatikk.</li>
 </ul>
 
+<h3>Siste innlegg</h3>
+
+<ul>
+  <li>
+    <a href={resolve('/p/2026/05/norges-lengste-stedsnavn')}>Hva er Norges lengste stedsnavn?</a>
+  </li>
+</ul>
+
 <h3>Mine profiler på Internett</h3>
 
 <p>
