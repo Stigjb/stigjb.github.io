@@ -13,6 +13,7 @@
 
 <h1>{title}</h1>
 {@render children?.()}
+
 <p>Publisert <time datetime={date}>{dateFormatter.format(new Date(date))}</time></p>
 
 <style lang="css">

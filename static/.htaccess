@@ -5,4 +5,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
+RedirectMatch 301 ^/chord-quiz/?$ https://akkordkviss.stigjohan.no
+
 ErrorDocument 404 /404.html

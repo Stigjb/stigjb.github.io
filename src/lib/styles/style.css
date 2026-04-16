@@ -40,17 +40,13 @@ html {
 
 body {
   font-family: 'IBM Plex Serif', serif;
-  line-height: 1.6;
+  line-height: 1.6rem;
   margin: auto;
 
   background: white;
   color: var(--color-primary-4);
   --text-contrast: var(--color-secondary-2-3);
   --bg-contrast: var(--color-secondary-2-1);
-}
-
-p {
-  hyphens: auto;
 }
 
 em em {
@@ -66,18 +62,16 @@ h1 {
 }
 
 h2 {
-  margin-top: 0;
   margin-bottom: 0.5rem;
-  margin-top: 0.8rem;
+  margin-top: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
   font-size: 1.1rem;
 }
 
 h3 {
-  margin-top: 0;
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
   color: var(--gray-600);
@@ -88,6 +82,11 @@ pre,
 code {
   font-family: 'Fira Mono', monospace;
   font-size: var(--small-font-size);
+}
+
+ul,
+ol {
+  margin: 0;
 }
 
 code {

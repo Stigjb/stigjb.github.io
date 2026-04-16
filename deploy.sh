@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-DOMAIN=beta.stigjohan.no
+DOMAIN=stigjohan.no
 
 lftp <<EOF
 open "$DOMAIN"

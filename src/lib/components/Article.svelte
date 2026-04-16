@@ -12,7 +12,7 @@
   article {
     max-width: var(--content-width);
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.5rem;
     padding-right: var(--margin-width);
     margin: auto;
     counter-reset: sidenote-counter 0;
