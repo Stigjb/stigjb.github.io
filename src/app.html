@@ -4,7 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="%sveltekit.assets%/favicon.svg" />
-    <script defer data-domain="stigjohan.no" src="https://plausible.io/js/script.js"></script>
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-eNUaffdWh4gye02isAoA0.js"></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+
     %sveltekit.head%
   </head>
 

@@ -8,6 +8,7 @@
     'Stig gir deg vinger',
     'Stig kurerer gruff',
     'Stig til folket',
+    'Stig vet hvordan',
     'bobler av Stig',
     'en Stig er nok',
     'et konsept fra Stig',
