@@ -1,6 +1,7 @@
 ---
 title: Hva er Norges lengste stedsnavn?
 date: '2026-05-03'
+description: 'Hva er det lengste stedsnavnet i Norge, og er det flere av dem? Jeg fant svaret i et datasett fra Kartverket.'
 ---
 
 Det er lett å svare på. Jeg bare laster ned et zip-arkiv fra Kartverket
