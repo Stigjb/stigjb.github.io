@@ -21,14 +21,14 @@ ___&comment:__ too-deep-online;;; ___?not-deep-enough ,,;;;;
 __&&&:::;;  sheep?___&continue_to_sheepweb.plz &$&$&*
 </pre>
 
-<style>
+<style lang="css">
   h1 {
     text-align: center;
     margin-bottom: 2rem;
   }
   pre {
     padding: 0.5em;
-    overflow: visible;
+    overflow: auto;
     background: var(--color-secondary-2-0);
     color: var(--color-secondary-2-1);
     --text-contrast: var(--color-primary-1);
