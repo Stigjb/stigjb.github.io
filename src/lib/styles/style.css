@@ -107,8 +107,12 @@ pre code {
   word-break: normal;
 }
 
-a[href] {
+main a[href]:not(:visited) {
   color: var(--text-contrast);
+}
+
+main a[href]:visited {
+  color: #551a8b;
 }
 
 a[href]:hover {

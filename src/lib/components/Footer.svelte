@@ -51,6 +51,7 @@
     justify-content: center;
     gap: 0;
     a[href] {
+      color: var(--text-contrast);
       text-decoration: none;
       padding: 0.25em 1em;
       &:hover {
