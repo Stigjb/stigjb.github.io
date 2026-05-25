@@ -14,6 +14,7 @@
     'et konsept fra Stig',
     'et lite stykke Stig',
     'har du Stig har du lov',
+    'i stigvær er det Stig som holder',
     'ikke alle kan kalle seg det samme som Stig',
     'ingen kjenner Stig bedre',
     'ingen slagord, bare Stig',
