@@ -24,6 +24,9 @@
 
 <ul>
   <li>
+    <a href={resolve('/p/2026/05/aa-grave-etter-en-norsk-greve')}>Å grave etter en norsk greve</a>
+  </li>
+  <li>
     <a href={resolve('/p/2026/05/norges-lengste-stedsnavn')}>Hva er Norges lengste stedsnavn?</a>
   </li>
 </ul>
